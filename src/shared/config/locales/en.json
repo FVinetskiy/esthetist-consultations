@@ -1,0 +1,83 @@
+{
+  "a11y": {
+    "scrollToTop": "Back to top",
+    "carouselPrev": "Previous review",
+    "carouselNext": "Next review",
+    "carouselDot": "Go to review"
+  },
+  "nav": {
+    "aria": "Main navigation",
+    "logoAria": "Back to home",
+    "home": "Home",
+    "about": "About",
+    "articles": "Articles",
+    "contacts": "Contacts"
+  },
+  "pages": {
+    "about": {
+      "title": "About",
+      "name": "Tatyana",
+      "role": "Cosmetologist · aesthetician",
+      "subtitle": "Personalized skincare guidance and formula literacy—calm, structured, no noise.",
+      "introParagraphs": [
+        "I’m Tatyana, a cosmetologist and aesthetician. My practice blends attention to detail, a gentle communication style, and a habit of grounding advice in what we can verify: ingredients, how your skin responds, and the order of care steps.",
+        "Clients often say it feels easy to talk about sensitive topics with me—reactivity, breakouts, pigmentation, or fatigue from chasing every new launch. I don’t promise overnight miracles; I help you build a clear plan and spend wisely.",
+        "A strength I lean on is translating marketing into skin language: what a product is actually doing for you, and what can wait or be swapped for something kinder."
+      ],
+      "valuesTitle": "How I work",
+      "values": [
+        "Context first: skin type, routine, stress, sleep, medications—anything that affects your barrier and how skin reacts.",
+        "Then ingredients and steps: cleansing, hydration, protection, actives—without overload or “ten steps for the sake of ten steps.”",
+        "We align expectations: what at-home care can do, what belongs with a dermatologist, and what to track over 2–4 weeks."
+      ],
+      "closing": "If you value calm, evidence-minded guidance—without pressure and with respect for your comfort—I’d be glad to meet you in consultation.",
+      "photoAltPortrait": "Tatyana—cosmetologist and aesthetician",
+      "photoAltWorkspace": "Professional skincare setting and consultation atmosphere"
+    },
+    "articles": {
+      "title": "Articles",
+      "lead": "Six guides on skincare basics: cleansing, barrier, SPF, hydration, and gentle actives. Educational copy.",
+      "backToList": "All articles",
+      "readTime": "min read"
+    },
+    "privacy": {
+      "title": "Privacy policy"
+    },
+    "offer": {
+      "title": "Public offer"
+    },
+    "social": {
+      "title": "Social"
+    },
+    "legalStub": {
+      "body": "This section is in progress. If you need a document urgently, reach out via Contacts."
+    },
+    "contacts": {
+      "title": "Contacts",
+      "lead": "Pick a channel you like—I reply during working hours and can explain how consultations work.",
+      "intro": "Messengers, a call, or email—whatever feels right. For urgent topics, a second channel helps.",
+      "channelsTitle": "Ways to reach me",
+      "footnote": "Messenger links open in the app or browser. You can copy the phone or email from the row.",
+      "decorTitle": "Let’s talk",
+      "decorText": "Add a bit of context in your first message so the reply is on point. Mark it urgent if time‑sensitive.",
+      "labelPhone": "Phone",
+      "labelEmail": "Email",
+      "labelTelegram": "Telegram",
+      "labelViber": "Viber",
+      "labelWhatsapp": "WhatsApp",
+      "labelInstagram": "Instagram"
+    }
+  },
+  "header": {
+    "language": "Interface language",
+    "langRu": "Russian",
+    "langEn": "English"
+  },
+  "theme": {
+    "useDark": "Dark theme",
+    "useLight": "Light theme"
+  },
+  "home": {
+    "welcome": "Welcome."
+  }
+}
