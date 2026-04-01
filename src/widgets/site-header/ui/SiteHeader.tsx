@@ -25,7 +25,7 @@ export function SiteHeader() {
 
   return (
     <AppBar
-      position="sticky"
+      position="fixed"
       color="default"
       elevation={0}
       sx={{
@@ -102,6 +102,7 @@ export function SiteHeader() {
                 color={active ? "primary" : "inherit"}
                 sx={{
                   fontWeight: active ? 600 : 400,
+                  fontFamily: "var(--font-manrope), system-ui, sans-serif",
                   minWidth: "auto",
                   fontSize: { xs: "0.925rem", sm: "1rem" },
                   px: { xs: 1, sm: 1.25 },

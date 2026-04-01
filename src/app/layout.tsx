@@ -1,21 +1,21 @@
 import type { Metadata, Viewport } from "next";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v16-appRouter";
-import { Inter, Lora } from "next/font/google";
+import { DM_Serif_Display, Manrope } from "next/font/google";
 import { AppShell } from "@/app/AppShell";
 import { AppProviders } from "@/app/providers/AppProviders";
 import { SiteJsonLd } from "@/app/site-json-ld";
 import { getSiteUrl } from "@/shared/config/site-url";
 import "./globals.css";
 
-const inter = Inter({
-  variable: "--font-inter",
+const dmSerif = DM_Serif_Display({
+  variable: "--font-dm-serif-display",
   subsets: ["latin", "cyrillic"],
-  weight: ["300", "400", "500", "600"],
+  weight: ["400"],
   display: "swap",
 });
 
-const lora = Lora({
-  variable: "--font-lora",
+const manrope = Manrope({
+  variable: "--font-manrope",
   subsets: ["latin", "cyrillic"],
   weight: ["400", "500", "600", "700"],
   display: "swap",
@@ -65,7 +65,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html
       lang="ru"
-      className={`${inter.variable} ${lora.variable}`}
+      className={`${dmSerif.variable} ${manrope.variable}`}
       suppressHydrationWarning
     >
       <body>

@@ -27,7 +27,7 @@ type TariffCardProps = {
   tier: TariffTier;
 };
 
-type Panel = "details" | "fit" | null;
+type Panel = "fit" | null;
 
 function BulletList({ items }: { items: string[] }) {
   return (
@@ -68,6 +68,7 @@ export function TariffCard({ tier }: TariffCardProps) {
   const analyticsItems = t(`${p}.analyticsItems`, { returnObjects: true }) as string[];
   const recItems = t(`${p}.recItems`, { returnObjects: true }) as string[];
   const materialsItems = t(`${p}.materialsItems`, { returnObjects: true }) as string[];
+  const supportText = t(`${p}.supportText`);
   const fitItems = t(`${p}.fitItems`, { returnObjects: true }) as string[];
   const fitNoteKey = `${p}.fitNote`;
   const fitNote = t(fitNoteKey, { defaultValue: "" });
@@ -106,27 +107,56 @@ export function TariffCard({ tier }: TariffCardProps) {
         >
           <Box sx={{ flex: "1 1 auto", minWidth: 0 }}>
             <Typography
-              variant="overline"
+              variant="h5"
               color="primary"
-              fontWeight={700}
-              letterSpacing={1}
+              fontWeight={800}
+              textAlign="center"
+              sx={{ mb: 0.5 }}
             >
               {t(`${p}.name`)}
             </Typography>
-            <Typography variant="body2" color="text.secondary" sx={{ mb: 1 }}>
+            <Typography variant="body2" color="text.secondary" sx={{ mb: 1, textAlign: "center" }}>
               {t(`${p}.tagline`)}
             </Typography>
             <Typography
               variant="h4"
               component="p"
-              sx={{ color: (th) => th.palette.brand.heading, fontWeight: 700, mb: 2 }}
+              sx={{
+                color: (th) => th.palette.brand.heading,
+                fontWeight: 700,
+                mb: 2,
+                textAlign: "center",
+              }}
             >
               {t(`${p}.price`)}
             </Typography>
 
-            <Typography variant="subtitle2" sx={{ mb: 1, color: "text.secondary" }}>
-              {t("landing.tariffs.markersTitle")}
+            <Typography variant="subtitle2" sx={{ mb: 0.75 }}>
+              {t(`${p}.analyticsTitle`)}
             </Typography>
+            <BulletList items={analyticsItems} />
+
+            <Typography variant="subtitle2" sx={{ mb: 0.75, mt: 1.5 }}>
+              {t(`${p}.recTitle`)}
+            </Typography>
+            <BulletList items={recItems} />
+
+            {tier !== "lite" ? (
+              <Box>
+                <Typography variant="subtitle2" sx={{ mb: 0.75, mt: 1.5 }}>
+                  {t(`${p}.materialsTitle`)}
+                </Typography>
+                <BulletList items={materialsItems} />
+              </Box>
+            ) : null}
+
+            <Typography variant="subtitle2" sx={{ mb: 0.75, mt: 1.5 }}>
+              {t(`${p}.supportTitle`)}
+            </Typography>
+            <Typography variant="body2" color="text.secondary" sx={{ lineHeight: 1.6, mb: 1 }}>
+              {supportText}
+            </Typography>
+
             <BulletList items={markers} />
           </Box>
 
@@ -138,31 +168,6 @@ export function TariffCard({ tier }: TariffCardProps) {
               borderTop: `1px solid ${sep}`,
             }}
           >
-            <Button
-              type="button"
-              fullWidth
-              color="inherit"
-              onClick={() => setPanel("details")}
-              endIcon={<ChevronRightIcon sx={{ fontSize: 18, opacity: 0.65 }} />}
-              sx={{
-                justifyContent: "space-between",
-                py: 1.35,
-                px: 2,
-                borderRadius: 0,
-                textAlign: "left",
-                fontWeight: 600,
-                textTransform: "none",
-                borderBottom: `1px solid ${sep}`,
-                "&:hover": {
-                  bgcolor: alpha(
-                    theme.palette.primary.main,
-                    theme.palette.mode === "light" ? 0.06 : 0.12,
-                  ),
-                },
-              }}
-            >
-              {t("landing.tariffs.detailsToggle")}
-            </Button>
             <Button
               type="button"
               fullWidth
@@ -240,9 +245,7 @@ export function TariffCard({ tier }: TariffCardProps) {
         }}
       >
         <DialogTitle id={titleId} sx={{ pr: 6, pt: 2.5, pb: 1 }}>
-          {panel === "details"
-            ? t("landing.tariffs.detailsToggle")
-            : t("landing.tariffs.fitToggle")}
+          {t("landing.tariffs.fitToggle")}
           <Typography
             variant="body2"
             color="text.secondary"
@@ -268,56 +271,21 @@ export function TariffCard({ tier }: TariffCardProps) {
             WebkitOverflowScrolling: "touch",
           }}
         >
-          {panel === "details" ? (
-            <Stack spacing={2.5}>
-              <Box>
-                <Typography variant="subtitle2" sx={{ mb: 0.75 }}>
-                  {t(`${p}.analyticsTitle`)}
-                </Typography>
-                <BulletList items={analyticsItems} />
-              </Box>
-              <Box>
-                <Typography variant="subtitle2" sx={{ mb: 0.75 }}>
-                  {t(`${p}.recTitle`)}
-                </Typography>
-                <BulletList items={recItems} />
-              </Box>
-              <Box>
-                <Typography variant="subtitle2" sx={{ mb: 0.75 }}>
-                  {t(`${p}.materialsTitle`)}
-                </Typography>
-                <BulletList items={materialsItems} />
-              </Box>
-              <Box>
-                <Typography variant="subtitle2" sx={{ mb: 0.75 }}>
-                  {t(`${p}.supportTitle`)}
-                </Typography>
-                <Typography
-                  variant="body2"
-                  color="text.secondary"
-                  sx={{ lineHeight: 1.6 }}
-                >
-                  {t(`${p}.supportText`)}
-                </Typography>
-              </Box>
-            </Stack>
-          ) : (
-            <Box>
-              <Typography variant="subtitle2" sx={{ mb: 1 }}>
-                {t(`${p}.fitTitle`)}
+          <Box>
+            <Typography variant="subtitle2" sx={{ mb: 1 }}>
+              {t(`${p}.fitTitle`)}
+            </Typography>
+            <BulletList items={fitItems} />
+            {hasFitNote ? (
+              <Typography
+                variant="body2"
+                color="text.secondary"
+                sx={{ mt: 2, lineHeight: 1.6 }}
+              >
+                {fitNote}
               </Typography>
-              <BulletList items={fitItems} />
-              {hasFitNote ? (
-                <Typography
-                  variant="body2"
-                  color="text.secondary"
-                  sx={{ mt: 2, lineHeight: 1.6 }}
-                >
-                  {fitNote}
-                </Typography>
-              ) : null}
-            </Box>
-          )}
+            ) : null}
+          </Box>
         </DialogContent>
         <DialogActions sx={{ px: 2.5, py: 1.5 }}>
           <Button type="button" variant="contained" onClick={close} fullWidth={false}>

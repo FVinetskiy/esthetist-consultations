@@ -27,6 +27,13 @@ export function AppShell({ children }: AppShellProps) {
     >
       <SiteHeader />
       <Box
+        aria-hidden
+        sx={{
+          height: { xs: 108, md: 52 },
+          flexShrink: 0,
+        }}
+      />
+      <Box
         component="main"
         sx={{
           flex: 1,

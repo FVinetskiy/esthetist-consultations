@@ -46,7 +46,7 @@ export const landingEn = {
     lite: {
       name: "Lite",
       tagline: "Care for right now",
-      price: "2 500 ₽",
+      price: "3 000 ₽",
       markers: [
         "Diagnostics & INCI review of your products",
         "Two ready-made routine options",
@@ -85,7 +85,7 @@ export const landingEn = {
     pro: {
       name: "Pro",
       tagline: "Deeper analysis & coaching",
-      price: "4 000 ₽",
+      price: "5 000 ₽",
       markers: [
         "In-depth analytics & a personal PDF guide",
         "Learn to adjust your routine yourself",
@@ -125,7 +125,7 @@ export const landingEn = {
     proPlus: {
       name: "Pro+",
       tagline: "Complex, changing skin",
-      price: "6 000 ₽",
+      price: "7 000 ₽",
       markers: [
         "Personal plan + 2 tune-ups (every 3–4 months)",
         "For dynamic or challenging skin",
@@ -180,15 +180,10 @@ export const landingEn = {
   },
   workCard: {
     title: "How we work",
-    subtitle: "Step by step, no surprises",
-    detailsToggle: "Format, timing & support",
-    stepsIntro:
-      "From booking to materials and follow-up—the main beats stay visible. Open below for online format and how long support lasts.",
     steps: [
       "Choose a tier and pay.",
-      "Quick registration on the site.",
-      "Fill in the intake form.",
       "Within 24 hours we agree on date & time.",
+      "Fill in the intake form.",
     ],
     formatTitle: "Format",
     formatText: "Remote (online). Audio or video via Yandex Telemost.",
@@ -202,47 +197,37 @@ export const landingEn = {
       "Lite — 7 days after the consultation",
       "Pro — 2 weeks after the consultation",
       "Pro+ — 1 month + 2 weeks after each tune-up",
+      "Telegram support: text + voice messages:",
     ],
-    supportNote:
-      "On Telegram (text & voice): questions about the routine or materials after you read your guide.",
   },
   audienceCard: {
-    title: "Who my consultations are for",
-    shortBullets: [
-      "Tired of chaotic routines and conflicting advice",
-      "Your routine isn’t working — you want the “why”",
-      "You need support on topical or systemic retinoids",
-      "Complex skin: acne, rosacea, pigmentation, sensitivity",
-      "Ready to move from guessing to mindful care",
-    ],
-    moreBtn: "See the full list",
-    fullTitle: "We’re a match if:",
+    title: "Who are consultations for?",
+    shortBullets: [],
+    fullTitle: "Consultations are a good fit if:",
     fullItems: [
-      "you’re tired of chaotic care and contradictory tips",
-      "care isn’t delivering and you want to understand why",
-      "you want clarity on actives and your personal “no-go” list",
-      "you’re on topical or systemic retinoids and need barrier-smart support",
-      "you have tricky skin that’s hard to balance alone (acne, rosacea, hyperpigmentation, reactive skin)",
-      "you’re building a routine and get lost in steps, compatibility, and order",
-      "you’ve loved cosmetics for years and want a professional, conscious approach",
-      "you want to extend results from device or injectable treatments",
+      "you are tired of chaotic care and contradictory recommendations",
+      "your routine is not delivering results and you want to understand why",
+      "you want to understand actives and your personal no-go ingredients",
+      "you are on topical or systemic retinoid therapy and your skin needs proper support",
+      "you have complex skin conditions: acne, rosacea, hyperpigmentation, sensitive or reactive skin",
+      "you want to move from intuitive product choices to a conscious, structured routine",
+      "you want to enhance and extend procedure results",
     ],
-    notForTitle: "When my approach isn’t the right fit",
+    notForTitle: "Who it is not for",
     notForItems: [
-      "you want one “miracle product” for everything (lasting results need a system)",
-      "you expect overnight fixes (years of stress show up slowly; acne, rosacea, melasma need patience)",
+      "if you are looking for a “magic product”",
+      "if you expect fast, instant changes",
     ],
     notForNote:
-      "Progress is gradual and depends on consistency and following the plan.",
+      "Skincare is a system. Results build gradually and depend on consistency and following recommendations.",
   },
   principlesCard: {
-    title: "Format & principles",
+    title: "Principles & format",
     teasers: [
       "Up to one hour, structured and focused",
       "I review your form beforehand — no filler on the call",
       "I don’t sell cosmetics or partner with brands",
     ],
-    moreToggle: "More about the format",
     body: [
       "Sessions last up to an hour—tight on time but roomy enough for your key questions without rush.",
       "I study your intake and goals ahead of time so we stay on-topic.",
