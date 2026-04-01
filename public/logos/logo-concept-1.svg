@@ -1,0 +1,9 @@
+<svg width="1400" height="420" viewBox="0 0 1400 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(82,118) scale(0.86)">
+    <path d="M96 0C66 14 48 42 48 72C48 100 64 128 91 142C102 147 117 150 132 149" stroke="#C58D7B" stroke-width="8" stroke-linecap="round"/>
+    <path d="M166 18C187 40 194 72 186 101C177 134 149 156 116 160" stroke="#C58D7B" stroke-width="8" stroke-linecap="round"/>
+    <circle cx="120" cy="86" r="72" stroke="#2E2A2A" stroke-width="5" opacity="0.8"/>
+  </g>
+  <text x="286" y="190" fill="#2E2A2A" font-size="92" font-family="Georgia, 'Times New Roman', serif" letter-spacing="1.2">estetist</text>
+  <text x="286" y="302" fill="#7A5C52" font-size="90" font-family="Georgia, 'Times New Roman', serif" letter-spacing="1.1">kosmetolog</text>
+</svg>

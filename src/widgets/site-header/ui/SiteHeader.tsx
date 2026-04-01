@@ -42,7 +42,7 @@ export function SiteHeader() {
         disableGutters
         sx={{
           display: "grid",
-          gridTemplateColumns: { xs: "1fr auto", md: "auto minmax(0, 1fr) auto" },
+          gridTemplateColumns: { xs: "1fr auto", md: "1fr auto 1fr" },
           gridTemplateRows: { xs: "auto auto", md: "auto" },
           columnGap: { xs: 1, sm: 2 },
           rowGap: { xs: 1.25, md: 0 },
@@ -88,8 +88,7 @@ export function SiteHeader() {
             gridColumn: { xs: "1 / -1", md: 2 },
             gridRow: { xs: 2, md: 1 },
             justifySelf: "center",
-            width: "100%",
-            maxWidth: { md: "100%" },
+            width: { xs: "100%", md: "auto" },
             rowGap: 0.5,
           }}
         >

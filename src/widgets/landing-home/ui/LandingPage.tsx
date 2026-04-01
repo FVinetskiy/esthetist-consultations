@@ -15,25 +15,25 @@ export function LandingPage() {
   return (
     <Box sx={{ flex: 1, display: "flex", flexDirection: "column" }}>
       <HeroSection />
-      <RevealOnScroll>
+      <RevealOnScroll direction="left" offsetPx={52} durationSec={0.62}>
         <ShowcaseSection />
       </RevealOnScroll>
-      <RevealOnScroll>
+      <RevealOnScroll direction="right" offsetPx={52} durationSec={0.62}>
         <TariffsSection />
       </RevealOnScroll>
-      <RevealOnScroll>
+      <RevealOnScroll direction="left" offsetPx={52} durationSec={0.62}>
         <FreeGuideSection />
       </RevealOnScroll>
-      <RevealOnScroll>
+      <RevealOnScroll direction="right" offsetPx={52} durationSec={0.62}>
         <InfoSections />
       </RevealOnScroll>
-      <RevealOnScroll>
+      <RevealOnScroll direction="left" offsetPx={52} durationSec={0.62}>
         <BenefitsSection />
       </RevealOnScroll>
-      <RevealOnScroll>
+      <RevealOnScroll direction="right" offsetPx={52} durationSec={0.62}>
         <ReviewsSection />
       </RevealOnScroll>
-      <RevealOnScroll>
+      <RevealOnScroll direction="left" offsetPx={52} durationSec={0.62}>
         <FaqSection />
       </RevealOnScroll>
     </Box>

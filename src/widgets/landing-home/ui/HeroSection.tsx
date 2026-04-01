@@ -9,13 +9,8 @@ import Typography from "@mui/material/Typography";
 import { alpha, useTheme } from "@mui/material/styles";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import { useTranslation } from "react-i18next";
-import {
-  IconDropletSolid,
-  IconHeartSolid,
-  IconScienceSolid,
-} from "@/shared/ui/icons/SolidIcons";
 
 const HERO_IMG = "/avatar.jpg";
 
@@ -25,87 +20,6 @@ export function HeroSection() {
   const sectionRef = useRef<HTMLElement>(null);
   const auraRef = useRef<HTMLDivElement>(null);
   const light = theme.palette.mode === "light";
-
-  useEffect(() => {
-    if (typeof window === "undefined") return;
-    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
-
-    const clear = () => {
-      auraRef.current?.style.removeProperty("transform");
-      auraRef.current?.style.removeProperty("will-change");
-    };
-
-    let rafId = 0;
-    const target = { y: 0 };
-    const current = { y: 0 };
-
-    const measure = () => {
-      const el = sectionRef.current;
-      if (!el) return;
-      const rect = el.getBoundingClientRect();
-      const vh = window.innerHeight || 1;
-      const focus = rect.top + rect.height * 0.42;
-      target.y = Math.max(-1, Math.min(1, (vh * 0.5 - focus) / (vh * 0.65)));
-    };
-
-    const apply = (c: number) => {
-      if (light && auraRef.current) {
-        auraRef.current.style.setProperty("will-change", "transform");
-        auraRef.current.style.setProperty(
-          "transform",
-          `translate3d(${c * 6}%, ${c * 4.5}%, 0) scale(${1.04 + c * 0.035})`,
-        );
-      }
-    };
-
-    const tick = () => {
-      current.y += (target.y - current.y) * 0.1;
-      apply(current.y);
-      if (Math.abs(target.y - current.y) > 0.002) {
-        rafId = requestAnimationFrame(tick);
-      } else {
-        rafId = 0;
-        auraRef.current?.style.removeProperty("will-change");
-      }
-    };
-
-    const kick = () => {
-      if (mq.matches) {
-        clear();
-        return;
-      }
-      measure();
-      if (!rafId) rafId = requestAnimationFrame(tick);
-    };
-
-    if (mq.matches) {
-      clear();
-    } else {
-      measure();
-      apply(current.y);
-    }
-
-    window.addEventListener("scroll", kick, { passive: true });
-    window.addEventListener("resize", kick);
-    const onMq = () => {
-      cancelAnimationFrame(rafId);
-      rafId = 0;
-      if (mq.matches) clear();
-      else {
-        current.y = target.y;
-        kick();
-      }
-    };
-    mq.addEventListener("change", onMq);
-
-    return () => {
-      window.removeEventListener("scroll", kick);
-      window.removeEventListener("resize", kick);
-      mq.removeEventListener("change", onMq);
-      cancelAnimationFrame(rafId);
-      clear();
-    };
-  }, [light]);
 
   return (
     <Box
@@ -210,51 +124,6 @@ export function HeroSection() {
               >
                 {t("landing.hero.subtitle")}
               </Typography>
-              <Stack
-                direction="row"
-                flexWrap="wrap"
-                gap={1.25}
-                sx={{ pt: 0.5 }}
-                aria-hidden
-              >
-                {[IconDropletSolid, IconScienceSolid, IconHeartSolid].map((Ic, i) => (
-                  <Box
-                    key={i}
-                    sx={{
-                      width: 44,
-                      height: 44,
-                      borderRadius: 2,
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      bgcolor: (th) =>
-                        alpha(
-                          th.palette.primary.main,
-                          th.palette.mode === "light" ? 0.12 : 0.18,
-                        ),
-                      color: (th) => th.palette.brand.heading,
-                      transition:
-                        "transform 0.25s ease, color 0.25s ease, background-color 0.25s ease",
-                      "@media (hover: hover)": {
-                        "&:hover": {
-                          color: "primary.main",
-                          bgcolor: (th) =>
-                            alpha(
-                              th.palette.primary.main,
-                              th.palette.mode === "light" ? 0.2 : 0.26,
-                            ),
-                          transform: "translateY(-3px)",
-                        },
-                      },
-                      "@media (prefers-reduced-motion: reduce)": {
-                        "&:hover": { transform: "none" },
-                      },
-                    }}
-                  >
-                    <Ic sx={{ fontSize: 22 }} />
-                  </Box>
-                ))}
-              </Stack>
               <Stack
                 direction={{ xs: "column", sm: "row" }}
                 spacing={1.5}

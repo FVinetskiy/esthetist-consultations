@@ -4,15 +4,11 @@ import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemIcon from "@mui/material/ListItemIcon";
-import ListItemText from "@mui/material/ListItemText";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
+import { alpha } from "@mui/material/styles";
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
-import { IconBookSolid, IconCheckSolid } from "@/shared/ui/icons/SolidIcons";
 import { Section } from "./Section";
 
 export function FreeGuideSection() {
@@ -24,76 +20,96 @@ export function FreeGuideSection() {
       <Card
         elevation={0}
         sx={{
-          maxWidth: 720,
+          position: "relative",
+          overflow: "hidden",
+          maxWidth: 960,
           mx: "auto",
+          borderRadius: { xs: 5, md: 7 },
           bgcolor: (th) =>
             th.palette.mode === "light"
-              ? th.palette.brand.bg
-              : th.palette.background.paper,
+              ? "#F2F2F3"
+              : alpha(th.palette.background.paper, 0.92),
+          backgroundImage: (th) =>
+            th.palette.mode === "light"
+              ? "linear-gradient(90deg, #efeff0 0%, #f6f6f7 50%, #eeeeef 100%)"
+              : "linear-gradient(90deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 100%)",
         }}
       >
-        <CardContent sx={{ p: { xs: 3, md: 4 } }}>
-          <Stack spacing={2.5}>
-            <Stack direction="row" alignItems="center" spacing={1.5}>
-              <Box
-                sx={{
-                  color: "primary.main",
-                  display: "flex",
-                  transition: "transform 0.28s ease",
-                  "@media (hover: hover)": {
-                    "&:hover": { transform: "rotate(-4deg) scale(1.05)" },
-                  },
-                  "@media (prefers-reduced-motion: reduce)": {
-                    "&:hover": { transform: "none" },
-                  },
-                }}
-                aria-hidden
-              >
-                <IconBookSolid sx={{ fontSize: 36 }} />
-              </Box>
-              <Typography
-                variant="h3"
-                sx={{ color: (theme) => theme.palette.brand.heading }}
-              >
-                {t("landing.freeGuide.title")}
-              </Typography>
-            </Stack>
-            <Typography variant="subtitle1" fontWeight={600}>
+        <Box
+          aria-hidden
+          sx={{
+            position: "absolute",
+            left: { xs: -42, md: -36 },
+            bottom: { xs: -34, md: -30 },
+            width: { xs: 116, md: 148 },
+            height: { xs: 116, md: 148 },
+            borderRadius: "42% 58% 53% 47% / 42% 43% 57% 58%",
+            bgcolor: (th) => alpha(th.palette.primary.main, th.palette.mode === "light" ? 0.12 : 0.18),
+            filter: "blur(0.2px)",
+          }}
+        />
+        <Box
+          aria-hidden
+          sx={{
+            position: "absolute",
+            right: { xs: -56, md: -42 },
+            top: { xs: -48, md: -34 },
+            width: { xs: 132, md: 170 },
+            height: { xs: 132, md: 170 },
+            borderRadius: "55% 45% 48% 52% / 58% 40% 60% 42%",
+            bgcolor: (th) => alpha(th.palette.brand.accent, th.palette.mode === "light" ? 0.2 : 0.22),
+          }}
+        />
+        <CardContent sx={{ px: { xs: 2.5, md: 5 }, py: { xs: 4, md: 5 }, position: "relative", zIndex: 1 }}>
+          <Stack spacing={2.25} alignItems="center" textAlign="center">
+            <Typography variant="h3" sx={{ color: (theme) => theme.palette.brand.heading, maxWidth: 660 }}>
+              {t("landing.freeGuide.title")}
+            </Typography>
+            <Typography variant="body1" color="text.secondary" sx={{ maxWidth: 620, lineHeight: 1.7 }}>
+              {t("landing.freeGuide.promoNote")}
+            </Typography>
+            <Typography variant="subtitle2" sx={{ color: "text.secondary", letterSpacing: 0.2 }}>
               {t("landing.freeGuide.insideTitle")}
             </Typography>
-            <List dense>
+            <Stack direction="row" flexWrap="wrap" justifyContent="center" gap={1}>
               {points.map((pt) => (
-                <ListItem key={pt} disableGutters>
-                  <ListItemIcon sx={{ minWidth: 36, color: "primary.main" }}>
-                    <IconCheckSolid sx={{ fontSize: 22 }} />
-                  </ListItemIcon>
-                  <ListItemText
-                    primary={pt}
-                    primaryTypographyProps={{ variant: "body1" }}
-                  />
-                </ListItem>
+                <Box
+                  key={pt}
+                  sx={{
+                    px: 1.25,
+                    py: 0.65,
+                    borderRadius: 999,
+                    bgcolor: (th) => alpha(th.palette.background.paper, th.palette.mode === "light" ? 0.72 : 0.2),
+                    border: "1px solid",
+                    borderColor: (th) => alpha(th.palette.divider, 0.65),
+                    color: "text.secondary",
+                    fontSize: 14,
+                    lineHeight: 1.2,
+                  }}
+                >
+                  {pt}
+                </Box>
               ))}
-            </List>
+            </Stack>
             <Button
               component={Link}
               href="/contacts"
               variant="contained"
               size="large"
               sx={{
-                alignSelf: { xs: "stretch", sm: "flex-start" },
-                "&:hover": { transform: "translateY(-1px)" },
+                mt: 0.5,
+                boxShadow: (t) =>
+                  t.palette.mode === "light"
+                    ? `0 10px 28px ${alpha(t.palette.primary.main, 0.42)}`
+                    : undefined,
+                "&:hover": { transform: "translateY(-2px)" },
+                "@media (prefers-reduced-motion: reduce)": {
+                  "&:hover": { transform: "none" },
+                },
               }}
             >
               {t("landing.freeGuide.cta")}
             </Button>
-            <Typography
-              variant="body2"
-              color="text.secondary"
-              lineHeight={1.7}
-              sx={{ pt: 0.5 }}
-            >
-              {t("landing.freeGuide.promoNote")}
-            </Typography>
           </Stack>
         </CardContent>
       </Card>

@@ -99,31 +99,44 @@ export function cardShadowHoverLight(theme: { palette: { mode: string } }) {
 
 const baseOptions: ThemeOptions = {
   typography: {
-    fontFamily: "var(--font-ibm-plex-sans), system-ui, sans-serif",
+    fontFamily: "var(--font-inter), system-ui, sans-serif",
     button: {
       textTransform: "none",
       fontWeight: 600,
+      fontFamily: "var(--font-inter), system-ui, sans-serif",
     },
     h1: {
       fontWeight: 700,
+      fontFamily: "var(--font-lora), Georgia, serif",
       letterSpacing: "-0.02em",
       fontSize: "clamp(1.35rem, 0.5rem + 3.8vw, 2.35rem)",
     },
     h2: {
       fontWeight: 700,
+      fontFamily: "var(--font-lora), Georgia, serif",
       letterSpacing: "-0.01em",
       fontSize: "clamp(1.25rem, 0.45rem + 3.2vw, 2rem)",
     },
     h3: {
       fontWeight: 600,
+      fontFamily: "var(--font-lora), Georgia, serif",
       fontSize: "clamp(1.15rem, 0.4rem + 2.6vw, 1.75rem)",
     },
     h4: {
       fontWeight: 600,
+      fontFamily: "var(--font-lora), Georgia, serif",
       fontSize: "clamp(1.08rem, 0.35rem + 2.2vw, 1.5rem)",
     },
-    h5: { fontWeight: 600, fontSize: "clamp(1.02rem, 0.3rem + 1.8vw, 1.25rem)" },
-    h6: { fontWeight: 600, fontSize: "clamp(0.98rem, 0.25rem + 1.5vw, 1.125rem)" },
+    h5: {
+      fontWeight: 600,
+      fontFamily: "var(--font-lora), Georgia, serif",
+      fontSize: "clamp(1.02rem, 0.3rem + 1.8vw, 1.25rem)",
+    },
+    h6: {
+      fontWeight: 600,
+      fontFamily: "var(--font-lora), Georgia, serif",
+      fontSize: "clamp(0.98rem, 0.25rem + 1.5vw, 1.125rem)",
+    },
   },
   shape: {
     borderRadius: 10,

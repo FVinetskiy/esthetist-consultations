@@ -5,7 +5,7 @@ import Grid from "@mui/material/Grid";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 import { useTranslation } from "react-i18next";
-import { IconLayersSolid } from "@/shared/ui/icons/SolidIcons";
+import { IconDropletCheckSolid } from "@/shared/ui/icons/SolidIcons";
 import { Section } from "./Section";
 import { TariffCard } from "./TariffCard";
 
@@ -35,7 +35,7 @@ export function TariffsSection() {
             }}
             aria-hidden
           >
-            <IconLayersSolid sx={{ fontSize: { xs: 32, sm: 36 } }} />
+            <IconDropletCheckSolid sx={{ fontSize: { xs: 32, sm: 36 } }} />
           </Box>
           <Typography
             variant="h2"

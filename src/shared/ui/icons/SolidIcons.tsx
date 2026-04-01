@@ -105,6 +105,21 @@ export function IconDropletSolid(props: SvgIconProps) {
   );
 }
 
+export function IconDropletCheckSolid(props: SvgIconProps) {
+  return (
+    <SvgIcon viewBox="0 0 24 24" {...props}>
+      <path
+        fill="currentColor"
+        d="M12 2.4L6.18 8.22A8.23 8.23 0 004 14c0 4.42 3.58 8 8 8a7.97 7.97 0 007.12-4.35A4.9 4.9 0 0117.5 18c-2.49 0-4.5-2.01-4.5-4.5 0-2.36 1.82-4.3 4.13-4.48A7.98 7.98 0 0012 2.4z"
+      />
+      <path
+        fill="currentColor"
+        d="M17.1 9.7a3.8 3.8 0 100 7.6 3.8 3.8 0 000-7.6zm-0.7 5.35l-1.45-1.45 0.85-0.85 0.6 0.6 1.9-1.9 0.85 0.85-2.75 2.75z"
+      />
+    </SvgIcon>
+  );
+}
+
 export function IconScienceSolid(props: SvgIconProps) {
   return (
     <SvgIcon viewBox="0 0 24 24" {...props}>

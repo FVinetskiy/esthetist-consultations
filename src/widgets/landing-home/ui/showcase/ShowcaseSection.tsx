@@ -236,13 +236,13 @@ export function ShowcaseSection() {
 
               <Box sx={{ ...cardShell, p: { xs: 2, sm: 2.5 } }}>
                 <Stack spacing={1.25} sx={{ mb: 2.5 }}>
-                  <MarqueeStrip images={showcaseMedia.marqueeA} durationSec={28} />
+                  <MarqueeStrip images={showcaseMedia.marqueeA} durationSec={52} />
                   <MarqueeStrip
                     images={showcaseMedia.marqueeB}
-                    durationSec={34}
+                    durationSec={64}
                     reverse
                   />
-                  <MarqueeStrip images={showcaseMedia.marqueeC} durationSec={31} />
+                  <MarqueeStrip images={showcaseMedia.marqueeC} durationSec={58} />
                 </Stack>
                 <Stack spacing={0.75} sx={{ textAlign: { xs: "left", sm: "center" } }}>
                   <Typography

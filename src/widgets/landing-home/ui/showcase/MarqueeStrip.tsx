@@ -38,6 +38,9 @@ export function MarqueeStrip({
           alignItems: "center",
           animation: `showcase-marquee ${durationSec}s linear infinite`,
           animationDirection: reverse ? "reverse" : "normal",
+          willChange: "transform",
+          transform: "translate3d(0,0,0)",
+          backfaceVisibility: "hidden",
           "@media (prefers-reduced-motion: reduce)": {
             animation: "none",
           },

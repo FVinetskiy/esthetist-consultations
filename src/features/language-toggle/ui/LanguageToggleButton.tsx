@@ -1,7 +1,6 @@
 "use client";
 
 import type { MouseEvent } from "react";
-import PublicOutlinedIcon from "@mui/icons-material/PublicOutlined";
 import Stack from "@mui/material/Stack";
 import ToggleButton from "@mui/material/ToggleButton";
 import ToggleButtonGroup from "@mui/material/ToggleButtonGroup";
@@ -25,10 +24,6 @@ export function LanguageToggleButton() {
   return (
     <Tooltip title={t("header.language")} disableTouchListener enterDelay={400}>
       <Stack direction="row" alignItems="center" spacing={0.75} component="span">
-        <PublicOutlinedIcon
-          sx={{ color: "text.secondary", fontSize: 22 }}
-          aria-hidden
-        />
         <ToggleButtonGroup
           exclusive
           value={locale}

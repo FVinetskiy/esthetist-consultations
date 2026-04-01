@@ -1,6 +1,5 @@
 "use client";
 
-import TelegramIcon from "@mui/icons-material/Telegram";
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import Link from "@mui/material/Link";
@@ -54,6 +53,14 @@ export function SiteFooter() {
               </Link>
               <Link
                 component={NextLink}
+                href="/ankety"
+                color="inherit"
+                underline="hover"
+              >
+                {t("landing.footer.ankety")}
+              </Link>
+              <Link
+                component={NextLink}
                 href="/privacy"
                 color="inherit"
                 underline="hover"
@@ -67,14 +74,6 @@ export function SiteFooter() {
                 underline="hover"
               >
                 {t("landing.footer.offer")}
-              </Link>
-              <Link
-                component={NextLink}
-                href="/social"
-                color="inherit"
-                underline="hover"
-              >
-                {t("landing.footer.social")}
               </Link>
             </Stack>
             <Stack spacing={0.75} alignItems={{ xs: "flex-start", sm: "flex-end" }}>
@@ -107,7 +106,6 @@ export function SiteFooter() {
                     color: "text.secondary",
                   }}
                 >
-                  <TelegramIcon sx={{ fontSize: 18 }} aria-hidden />
                   @FVinetskiy
                 </Link>
               </Stack>

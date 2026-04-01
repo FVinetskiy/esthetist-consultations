@@ -9,7 +9,7 @@ export const landingEn = {
   },
   skinCompare: {
     title: "Before & after: how skin can settle",
-    hint: "Move over the photo: the vertical line follows your pointer. Left of the line — after care, right — before; further right shows more “after”. Move away to snap back to center.",
+    hint: "Move over the photo: the vertical line follows your pointer. Left of the line — before, right — after; further right shows more “before”. Move away to snap back to center.",
     labelBefore: "Before",
     labelAfter: "After",
     altBefore: "Skin before routine adjustments",
@@ -288,26 +288,47 @@ export const landingEn = {
     items: [
       {
         author: "Anna",
-        text: "Finally understood why each step matters and how to pick actives for my skin—far fewer random buys.",
+        text: "Finally understood why each step matters and how to pick actives for my skin—far fewer random buys ✨ I can read labels with confidence now and stop chasing every trend. In just a couple of weeks, my skin looked more even and mornings felt easier 😊",
       },
       {
         author: "Maria",
-        text: "Skin calmed down, the plan felt clear, and chat support made the first weeks much easier.",
+        text: "Skin calmed down, the plan felt clear, and chat support made the first weeks much easier 💛 I loved being able to ask small follow-up questions without stress. Now the progress feels steady, with way fewer sudden reactions 🙂",
       },
       {
         author: "Helen",
-        text: "I value honest INCI breakdowns and zero brand pushing—it feels like we’re chasing my results.",
+        text: "I value honest INCI breakdowns and zero brand pushing—it feels like we’re chasing my results 🙌 I finally understand what products I truly need and what can be skipped. My routine is simpler now, and my skin looks fresher overall 🌿",
       },
     ],
     extra: [
       {
         author: "Olga",
-        text: "I feared retinoids; we built gentle barrier support and it finally felt manageable.",
+        text: "I feared retinoids; we built gentle barrier support and it finally felt manageable 🤍 Everything was introduced gradually, with no overload at all. My skin feels more predictable now, and flare-ups no longer scare me like before 🙂",
+      },
+      {
+        author: "Irina",
+        text: "After the consultation, I knew exactly what to keep and what to remove. My skin stopped getting red by evening and my routine feels lighter 🌸 I also appreciated how easy the plan was to fit into my schedule. Consistency became natural because everything finally made sense 😊",
+      },
+      {
+        author: "Svetlana",
+        text: "I loved how clearly each step was explained. Now I understand how to combine actives and keep results steady without overthinking ✨ I used to get confused about product order all the time. Now my routine is calm, clear, and my skin is noticeably smoother 😌",
+      },
+      {
+        author: "Natalia",
+        text: "The plan fit my real schedule, which made consistency easy. In a few weeks my tone looked more even and my skin felt calmer 💫 I also love that I don’t need a shelf full of products anymore. Fewer steps, better results for my skin every day 🫶",
+      },
+      {
+        author: "Victoria",
+        text: "I no longer feel pressure to buy every new product. The structure gave me confidence, and my skin reacts much better even during stressful weeks 🙏 I learned to respond to my skin’s signals instead of marketing noise. It saved both money and mental energy 😍",
+      },
+      {
+        author: "Daria",
+        text: "What I appreciated most was how personalized everything felt. Within weeks I noticed fewer breakouts and a healthier overall look 🌷 It really helped that I could ask questions and fine-tune details along the way. For the first time, I feel in control of my routine, not overwhelmed by it 💖",
       },
     ],
   },
   faq: {
     title: "Frequently asked questions",
+    lead: "Here are the questions I get most often about routines, timelines, and product choices. The answers are concise, practical, and calm so you can navigate skincare decisions with more clarity and less noise.",
     askCta: "Ask your question",
     items: [
       {
@@ -386,6 +407,7 @@ export const landingEn = {
   },
   footer: {
     contacts: "Contact",
+    ankety: "Forms",
     privacy: "Privacy policy",
     offer: "Public offer",
     social: "Social",

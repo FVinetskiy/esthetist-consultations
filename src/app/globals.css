@@ -15,6 +15,11 @@ img {
   -webkit-tap-highlight-color: transparent;
 }
 
+.QuestionLayout-Image {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
 @keyframes showcase-marquee {
   from {
     transform: translateX(0);

@@ -89,8 +89,8 @@ export function BeforeAfterSlider() {
       }}
     >
       <Image
-        src={skinCompareImages.before}
-        alt={t("landing.skinCompare.altBefore")}
+        src={skinCompareImages.after}
+        alt={t("landing.skinCompare.altAfter")}
         fill
         sizes="(max-width: 900px) 100vw, 380px"
         style={{ objectFit: "cover" }}
@@ -121,8 +121,8 @@ export function BeforeAfterSlider() {
           }}
         >
           <Image
-            src={skinCompareImages.after}
-            alt={t("landing.skinCompare.altAfter")}
+            src={skinCompareImages.before}
+            alt={t("landing.skinCompare.altBefore")}
             fill
             sizes="(max-width: 900px) 100vw, 380px"
             style={{ objectFit: "cover" }}
@@ -150,7 +150,7 @@ export function BeforeAfterSlider() {
           pointerEvents: "none",
         }}
       >
-        {t("landing.skinCompare.labelAfter")}
+        {t("landing.skinCompare.labelBefore")}
       </Typography>
       <Typography
         variant="caption"
@@ -170,7 +170,7 @@ export function BeforeAfterSlider() {
           pointerEvents: "none",
         }}
       >
-        {t("landing.skinCompare.labelBefore")}
+        {t("landing.skinCompare.labelAfter")}
       </Typography>
 
       <Box

@@ -1,83 +1,169 @@
 {
-  "a11y": {
-    "scrollToTop": "Back to top",
-    "carouselPrev": "Previous review",
-    "carouselNext": "Next review",
-    "carouselDot": "Go to review"
-  },
-  "nav": {
-    "aria": "Main navigation",
-    "logoAria": "Back to home",
-    "home": "Home",
-    "about": "About",
-    "articles": "Articles",
-    "contacts": "Contacts"
-  },
-  "pages": {
-    "about": {
-      "title": "About",
-      "name": "Tatyana",
-      "role": "Cosmetologist · aesthetician",
-      "subtitle": "Personalized skincare guidance and formula literacy—calm, structured, no noise.",
-      "introParagraphs": [
-        "I’m Tatyana, a cosmetologist and aesthetician. My practice blends attention to detail, a gentle communication style, and a habit of grounding advice in what we can verify: ingredients, how your skin responds, and the order of care steps.",
-        "Clients often say it feels easy to talk about sensitive topics with me—reactivity, breakouts, pigmentation, or fatigue from chasing every new launch. I don’t promise overnight miracles; I help you build a clear plan and spend wisely.",
-        "A strength I lean on is translating marketing into skin language: what a product is actually doing for you, and what can wait or be swapped for something kinder."
-      ],
-      "valuesTitle": "How I work",
-      "values": [
-        "Context first: skin type, routine, stress, sleep, medications—anything that affects your barrier and how skin reacts.",
-        "Then ingredients and steps: cleansing, hydration, protection, actives—without overload or “ten steps for the sake of ten steps.”",
-        "We align expectations: what at-home care can do, what belongs with a dermatologist, and what to track over 2–4 weeks."
-      ],
-      "closing": "If you value calm, evidence-minded guidance—without pressure and with respect for your comfort—I’d be glad to meet you in consultation.",
-      "photoAltPortrait": "Tatyana—cosmetologist and aesthetician",
-      "photoAltWorkspace": "Professional skincare setting and consultation atmosphere"
-    },
-    "articles": {
-      "title": "Articles",
-      "lead": "Six guides on skincare basics: cleansing, barrier, SPF, hydration, and gentle actives. Educational copy.",
-      "backToList": "All articles",
-      "readTime": "min read"
-    },
-    "privacy": {
-      "title": "Privacy policy"
-    },
-    "offer": {
-      "title": "Public offer"
-    },
-    "social": {
-      "title": "Social"
-    },
-    "legalStub": {
-      "body": "This section is in progress. If you need a document urgently, reach out via Contacts."
-    },
-    "contacts": {
-      "title": "Contacts",
-      "lead": "Pick a channel you like—I reply during working hours and can explain how consultations work.",
-      "intro": "Messengers, a call, or email—whatever feels right. For urgent topics, a second channel helps.",
-      "channelsTitle": "Ways to reach me",
-      "footnote": "Messenger links open in the app or browser. You can copy the phone or email from the row.",
-      "decorTitle": "Let’s talk",
-      "decorText": "Add a bit of context in your first message so the reply is on point. Mark it urgent if time‑sensitive.",
-      "labelPhone": "Phone",
-      "labelEmail": "Email",
-      "labelTelegram": "Telegram",
-      "labelViber": "Viber",
-      "labelWhatsapp": "WhatsApp",
-      "labelInstagram": "Instagram"
-    }
-  },
-  "header": {
-    "language": "Interface language",
-    "langRu": "Russian",
-    "langEn": "English"
-  },
-  "theme": {
-    "useDark": "Dark theme",
-    "useLight": "Light theme"
-  },
-  "home": {
-    "welcome": "Welcome."
-  }
+    "a11y":  {
+                 "scrollToTop":  "Back to top",
+                 "carouselPrev":  "Previous review",
+                 "carouselNext":  "Next review",
+                 "carouselDot":  "Go to review"
+             },
+    "nav":  {
+                "aria":  "Main navigation",
+                "logoAria":  "Back to home",
+                "home":  "Home",
+                "about":  "About",
+                "articles":  "Articles",
+                "contacts":  "Contacts"
+            },
+    "pages":  {
+                  "about":  {
+                                "title":  "About",
+                                "name":  "Tatyana",
+                                "role":  "Cosmetologist В· aesthetician",
+                                "subtitle":  "Personalized skincare guidance and formula literacyвЂ”calm, structured, no noise.",
+                                "introParagraphs":  [
+                                                        "IвЂ™m Tatyana, a cosmetologist and aesthetician. My practice blends attention to detail, a gentle communication style, and a habit of grounding advice in what we can verify: ingredients, how your skin responds, and the order of care steps.",
+                                                        "Clients often say it feels easy to talk about sensitive topics with meвЂ”reactivity, breakouts, pigmentation, or fatigue from chasing every new launch. I donвЂ™t promise overnight miracles; I help you build a clear plan and spend wisely.",
+                                                        "A strength I lean on is translating marketing into skin language: what a product is actually doing for you, and what can wait or be swapped for something kinder."
+                                                    ],
+                                "valuesTitle":  "How I work",
+                                "values":  [
+                                               "Context first: skin type, routine, stress, sleep, medicationsвЂ”anything that affects your barrier and how skin reacts.",
+                                               "Then ingredients and steps: cleansing, hydration, protection, activesвЂ”without overload or вЂњten steps for the sake of ten steps.вЂќ",
+                                               "We align expectations: what at-home care can do, what belongs with a dermatologist, and what to track over 2вЂ“4 weeks."
+                                           ],
+                                "closing":  "If you value calm, evidence-minded guidanceвЂ”without pressure and with respect for your comfortвЂ”IвЂ™d be glad to meet you in consultation.",
+                                "photoAltPortrait":  "TatyanaвЂ”cosmetologist and aesthetician",
+                                "photoAltWorkspace":  "Professional skincare setting and consultation atmosphere"
+                            },
+                  "articles":  {
+                                   "title":  "Articles",
+                                   "lead":  "Six guides on skincare basics: cleansing, barrier, SPF, hydration, and gentle actives. Educational copy.",
+                                   "backToList":  "All articles",
+                                   "readTime":  "min read"
+                               },
+                  "privacy":  {
+                                  "title":  "Privacy policy"
+                              },
+                  "offer":  {
+                                "title":  "Public offer"
+                            },
+                  "social":  {
+                                 "title":  "Social"
+                             },
+                  "legalStub":  {
+                                    "body":  "This section is in progress. If you need a document urgently, reach out via Contacts."
+                                },
+                  "contacts":  {
+                                   "title":  "Contacts",
+                                   "lead":  "Pick a channel you likeвЂ”I reply during working hours and can explain how consultations work.",
+                                   "intro":  "Messengers, a call, or emailвЂ”whatever feels right. For urgent topics, a second channel helps.",
+                                   "channelsTitle":  "Ways to reach me",
+                                   "footnote":  "Messenger links open in the app or browser. You can copy the phone or email from the row.",
+                                   "decorTitle":  "LetвЂ™s talk",
+                                   "decorText":  "Add a bit of context in your first message so the reply is on point. Mark it urgent if timeвЂ‘sensitive.",
+                                   "labelPhone":  "Phone",
+                                   "labelEmail":  "Email",
+                                   "labelTelegram":  "Telegram",
+                                   "labelViber":  "Viber",
+                                   "labelWhatsapp":  "WhatsApp",
+                                   "labelInstagram":  "Instagram"
+                               },
+                  "ankety":  {
+                                 "title":  "Questionnaires",
+                                 "lead":  "Two short formsвЂ”so I already have context before a consult or when planning an atвЂ‘home routine. Pick the one that fits; your answers open as a draft email in your mail app.",
+                                 "blockConsult":  {
+                                                      "title":  "Before a consultation",
+                                                      "subtitle":  "Share goals and your current routine so we can dive in faster when we meet.",
+                                                      "bullets":  [
+                                                                      "Saves time in the first session",
+                                                                      "Helps you articulate the request upfront",
+                                                                      "Takes just a few minutes"
+                                                                  ]
+                                                  },
+                                 "blockHome":  {
+                                                   "title":  "AtвЂ‘home routine planning",
+                                                   "subtitle":  "Skin type, life stage, and expectationsвЂ”a baseline for a personal plan without overload.",
+                                                   "bullets":  [
+                                                                   "Factors in sensitivity and limits",
+                                                                   "Focus on a realistic daily rhythm",
+                                                                   "Great if youвЂ™re building a system from scratch"
+                                                               ]
+                                               },
+                                 "cta":  {
+                                             "consult":  "PreвЂ‘consult form",
+                                             "home":  "AtвЂ‘home routine form"
+                                         },
+                                 "validation":  {
+                                                    "required":  "This field is required",
+                                                    "minLength":  "At least {{n}} characters"
+                                                },
+                                 "telegramSuccess":  "Sent. IвЂ™ll get back to you during working hours.",
+                                 "telegramSubmitting":  "SendingвЂ¦",
+                                 "telegramError":  {
+                                                       "generic":  "CouldnвЂ™t send. Try again later or use Contacts.",
+                                                       "not_configured":  "Sending isnвЂ™t configured on the server yet.",
+                                                       "telegram_error":  "Telegram rejected the message. Please try again.",
+                                                       "request_failed":  "Network or server issue. Check your connection."
+                                                   },
+                                 "consultForm":  {
+                                                     "title":  "PreвЂ‘consultation form",
+                                                     "hint":  "Your answers are delivered to me via Telegram. The more context, the better the reply.",
+                                                     "name":  "How should I address you",
+                                                     "contact":  "How to reach you",
+                                                     "contactPlaceholder":  "Phone or @telegram",
+                                                     "goals":  "What do you want from the consultation?",
+                                                     "routine":  "What you use now (optional)",
+                                                     "extra":  "Anything else: meds, treatments, allergies",
+                                                     "submit":  "Send",
+                                                     "cancel":  "Cancel",
+                                                     "closeAria":  "Close",
+                                                     "mailSubject":  "PreвЂ‘consultation questionnaire"
+                                                 },
+                                 "homeForm":  {
+                                                  "title":  "AtвЂ‘home skincare questionnaire",
+                                                  "hint":  "Responses go to my Telegram. Add any extra detail in the optional fields.",
+                                                  "name":  "How should I address you",
+                                                  "contact":  "How to reach you",
+                                                  "contactPlaceholder":  "Phone or @telegram",
+                                                  "ageRange":  "Age range",
+                                                  "skinType":  "Skin type (how it feels to you)",
+                                                  "concerns":  "What bothers you now?",
+                                                  "allergies":  "Ingredients you canвЂ™t tolerate or past reactions",
+                                                  "budget":  "Rough budget for skincare (optional)",
+                                                  "selectPlease":  "Choose an option",
+                                                  "age":  {
+                                                              "under25":  "Under 25",
+                                                              "25_35":  "25вЂ“35",
+                                                              "35_45":  "35вЂ“45",
+                                                              "45plus":  "45+"
+                                                          },
+                                                  "skin":  {
+                                                               "dry":  "Dry",
+                                                               "oily":  "Oily",
+                                                               "combo":  "Combination",
+                                                               "sensitive":  "Sensitive",
+                                                               "unsure":  "Hard to tell"
+                                                           },
+                                                  "submit":  "Send",
+                                                  "cancel":  "Cancel",
+                                                  "closeAria":  "Close",
+                                                  "mailSubject":  "Questionnaire: atвЂ‘home routine"
+                                              },
+                                 "switch":  {
+                                                "home":  "Follow-up",
+                                                "consult":  "First visit"
+                                            }
+                             }
+              },
+    "header":  {
+                   "language":  "Interface language",
+                   "langRu":  "Russian",
+                   "langEn":  "English"
+               },
+    "theme":  {
+                  "useDark":  "Dark theme",
+                  "useLight":  "Light theme"
+              },
+    "home":  {
+                 "welcome":  "Welcome."
+             }
 }

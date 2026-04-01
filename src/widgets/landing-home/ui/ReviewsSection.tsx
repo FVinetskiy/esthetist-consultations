@@ -14,52 +14,45 @@ type Review = { author: string; text: string };
 export function ReviewsSection() {
   const { t } = useTranslation();
   const theme = useTheme();
-  const h = theme.palette.brand.heading;
+  const heading = theme.palette.brand.heading;
   const items = t("landing.reviews.items", { returnObjects: true }) as Review[];
   const extra = t("landing.reviews.extra", { returnObjects: true }) as Review[];
   const slides = [...items, ...extra];
 
   return (
     <Section>
-      <Stack
-        direction="row"
-        alignItems="center"
-        justifyContent="center"
-        spacing={{ xs: 1.25, sm: 2 }}
-        sx={{ mb: 2, flexWrap: "nowrap" }}
-      >
+      <Stack spacing={1.25} alignItems="center" sx={{ mb: 1.5 }}>
         <Box
           component="span"
           sx={{
             display: "inline-flex",
             color: "primary.main",
-            flexShrink: 0,
             lineHeight: 0,
             opacity: theme.palette.mode === "light" ? 0.92 : 0.88,
-            mt: 0.25,
           }}
           aria-hidden
         >
-          <IconQuoteSolid sx={{ fontSize: { xs: 36, sm: 42 } }} />
+          <IconQuoteSolid sx={{ fontSize: { xs: 34, sm: 40 } }} />
         </Box>
-        <Typography variant="h2" sx={{ color: h, textAlign: "left" }}>
+        <Typography variant="h2" sx={{ color: heading, textAlign: "center" }}>
           {t("landing.reviews.title")}
         </Typography>
       </Stack>
+
       <Typography
         variant="body1"
         color="text.secondary"
         sx={{
-          maxWidth: 720,
+          maxWidth: 760,
           mx: "auto",
           mb: { xs: 3, md: 4 },
           textAlign: "center",
           lineHeight: 1.7,
-          px: { xs: 0.5, sm: 0 },
         }}
       >
         {t("landing.reviews.intro")}
       </Typography>
+
       <ReviewsSlider slides={slides} />
     </Section>
   );
