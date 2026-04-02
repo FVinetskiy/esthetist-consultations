@@ -11,7 +11,8 @@
                 "home":  "Home",
                 "about":  "About",
                 "articles":  "Articles",
-                "contacts":  "Contacts"
+                "contacts":  "Contacts",
+                "call":  "Call"
             },
     "pages":  {
                   "about":  {

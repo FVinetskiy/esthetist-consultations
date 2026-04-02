@@ -11,7 +11,8 @@
                 "home":  "Главная",
                 "about":  "Обо мне",
                 "articles":  "Статьи",
-                "contacts":  "Контакты"
+                "contacts":  "Контакты",
+                "call":  "Позвонить"
             },
     "pages":  {
                   "about":  {

@@ -4,8 +4,18 @@ export const landingEn = {
     subtitle:
       "Personal routines without one-size-fits-all tips, marketing myths, or overwhelming your skin.",
     ctaBook: "Book a consultation",
-    ctaDetails: "Learn more",
     imageAlt: "Consultant portrait",
+    photoPlaceholder: "Your large photo here — as in the mockup",
+    floatCards: [
+      {
+        title: "Formula literacy",
+        body: "INCI clarity and actives that fit — without overwhelming your skin.",
+      },
+      {
+        title: "Built around you",
+        body: "A routine for your pace and skin — not a generic template.",
+      },
+    ],
   },
   skinCompare: {
     title: "Before & after: how skin can settle",
