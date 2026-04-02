@@ -171,3 +171,55 @@ export function IconHelpSolid(props: SvgIconProps) {
     </SvgIcon>
   );
 }
+
+export function IconMoonStars(props: SvgIconProps) {
+  const { sx, ...rest } = props;
+  return (
+    <SvgIcon
+      viewBox="0 0 32 32"
+      {...rest}
+      sx={[{ fill: "none" }, ...(Array.isArray(sx) ? sx : sx ? [sx] : [])]}
+    >
+      <path
+        d="M27 14V8"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth={2}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M30 11H24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth={2}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M21 3V7"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth={2}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M23 5H19"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth={2}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M27.0875 19.075C25.1242 19.6256 23.0497 19.6436 21.0771 19.1273C19.1045 18.611 17.3048 17.5789 15.863 16.137C14.4212 14.6952 13.3891 12.8956 12.8728 10.9229C12.3564 8.95033 12.3745 6.87584 12.925 4.9125C10.9894 5.45127 9.22863 6.48778 7.81821 7.91879C6.40779 9.34981 5.39691 11.1254 4.88627 13.0687C4.37562 15.0119 4.38302 17.0551 4.90774 18.9946C5.43246 20.9341 6.45618 22.7023 7.87694 24.1231C9.29769 25.5438 11.0659 26.5676 13.0054 27.0923C14.9449 27.617 16.9881 27.6244 18.9314 27.1138C20.8746 26.6031 22.6502 25.5922 24.0812 24.1818C25.5123 22.7714 26.5488 21.0107 27.0875 19.075V19.075Z"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth={2}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </SvgIcon>
+  );
+}

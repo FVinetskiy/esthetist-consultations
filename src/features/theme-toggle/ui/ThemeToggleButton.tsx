@@ -1,12 +1,12 @@
 "use client";
 
-import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
 import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
 import IconButton from "@mui/material/IconButton";
 import Tooltip from "@mui/material/Tooltip";
 import { useTranslation } from "react-i18next";
 import { toggleColorMode } from "@/entities/theme";
 import { useAppDispatch, useAppSelector } from "@/shared/lib/store";
+import { IconMoonStars } from "@/shared/ui/icons/SolidIcons";
 
 export function ThemeToggleButton() {
   const colorMode = useAppSelector((state) => state.theme.colorMode);
@@ -28,7 +28,7 @@ export function ThemeToggleButton() {
         size="medium"
       >
         {isLight ? (
-          <DarkModeOutlinedIcon fontSize="medium" />
+          <IconMoonStars fontSize="medium" />
         ) : (
           <LightModeOutlinedIcon fontSize="medium" />
         )}

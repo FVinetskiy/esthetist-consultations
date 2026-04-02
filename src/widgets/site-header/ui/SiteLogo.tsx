@@ -12,8 +12,8 @@ export function SiteLogo({ sx }: SiteLogoProps) {
   const theme = useTheme();
   const logoSrc =
     theme.palette.mode === "dark"
-      ? "/logos/logo-concept-1-dark.svg"
-      : "/logos/logo-concept-1.svg";
+      ? "/logos/logo-dark.svg"
+      : "/logos/logo.svg";
 
   return (
     <Box

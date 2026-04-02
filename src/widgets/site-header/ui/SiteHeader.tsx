@@ -3,6 +3,7 @@
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
+import Container from "@mui/material/Container";
 import Stack from "@mui/material/Stack";
 import Toolbar from "@mui/material/Toolbar";
 import Link from "next/link";
@@ -41,17 +42,21 @@ export function SiteHeader() {
         variant="dense"
         disableGutters
         sx={{
-          display: "grid",
-          gridTemplateColumns: { xs: "1fr auto", md: "1fr auto 1fr" },
-          gridTemplateRows: { xs: "auto auto", md: "auto" },
-          columnGap: { xs: 1, sm: 2 },
-          rowGap: { xs: 1.25, md: 0 },
-          alignItems: "center",
           minHeight: { xs: "auto", md: 52 },
           py: { xs: 1, md: 0.75 },
-          px: { xs: 1.5, sm: 2, md: 3 },
         }}
       >
+        <Container
+          maxWidth="lg"
+          sx={{
+            display: "grid",
+            gridTemplateColumns: { xs: "1fr auto", md: "1fr auto 1fr" },
+            gridTemplateRows: { xs: "auto auto", md: "auto" },
+            columnGap: { xs: 1, sm: 2 },
+            rowGap: { xs: 1.25, md: 0 },
+            alignItems: "center",
+          }}
+        >
         <Box
           component={Link}
           href="/"
@@ -132,6 +137,7 @@ export function SiteHeader() {
           <LanguageToggleButton />
           <ThemeToggleButton />
         </Stack>
+        </Container>
       </Toolbar>
     </AppBar>
   );

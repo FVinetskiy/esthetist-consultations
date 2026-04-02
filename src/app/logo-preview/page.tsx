@@ -2,22 +2,23 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Logo Preview",
-  description: "Three SVG logo concepts preview",
+  description: "Site logo SVG preview",
 };
 
 const logos = [
-  { id: "1", src: "/logos/logo-concept-1.svg" },
-  { id: "2", src: "/logos/logo-concept-2.svg" },
-  { id: "3", src: "/logos/logo-concept-3.svg" },
+  { id: "light", label: "Light theme", src: "/logos/logo.svg", bg: "#fff" },
+  {
+    id: "dark",
+    label: "Dark theme",
+    src: "/logos/logo-dark.svg",
+    bg: "#1a1a1a",
+  },
 ] as const;
 
 export default function LogoPreviewPage() {
   return (
     <main style={{ maxWidth: 1200, margin: "0 auto", padding: "32px 20px 48px" }}>
-      <h1 style={{ margin: "0 0 10px", fontSize: 32 }}>Logo concepts</h1>
-      <p style={{ margin: "0 0 24px", color: "#666" }}>
-        estetist kosmetolog tatyana
-      </p>
+      <h1 style={{ margin: "0 0 24px", fontSize: 32 }}>Logo</h1>
 
       <div style={{ display: "grid", gap: 18 }}>
         {logos.map((logo) => (
@@ -26,17 +27,30 @@ export default function LogoPreviewPage() {
             style={{
               border: "1px solid #e7e7e7",
               borderRadius: 12,
-              background: "#fff",
+              background: logo.bg,
               overflow: "hidden",
             }}
           >
-            <div style={{ padding: "10px 14px", borderBottom: "1px solid #f0f0f0", fontWeight: 600 }}>
-              Variant {logo.id}
+            <div
+              style={{
+                padding: "10px 14px",
+                borderBottom: "1px solid rgba(0,0,0,0.08)",
+                fontWeight: 600,
+                color: logo.id === "dark" ? "#eee" : undefined,
+              }}
+            >
+              {logo.label}
             </div>
             <img
               src={logo.src}
-              alt={`Logo concept ${logo.id}`}
-              style={{ width: "100%", height: "auto", display: "block" }}
+              alt=""
+              style={{
+                width: "100%",
+                maxWidth: 480,
+                height: "auto",
+                display: "block",
+                padding: 24,
+              }}
             />
           </section>
         ))}
