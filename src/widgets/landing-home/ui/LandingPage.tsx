@@ -9,8 +9,8 @@ import { HeroSection } from "./HeroSection";
 import { InfoSections } from "./InfoSections";
 import { PhilosophySection } from "./PhilosophySection";
 import { ReviewsSection } from "./ReviewsSection";
-import { TariffsSection } from "./TariffsSection";
 
+import { TariffsSection } from "./TariffsSection";
 export function LandingPage() {
   return (
     <Box sx={{ flex: 1, display: "flex", flexDirection: "column" }}>

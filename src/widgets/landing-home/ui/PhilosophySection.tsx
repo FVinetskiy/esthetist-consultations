@@ -68,62 +68,6 @@ function MiniCheckIcon(props: SvgIconProps) {
   );
 }
 
-function AnalysisIllustration(props: SvgIconProps) {
-  return (
-    <SvgIcon viewBox="0 0 96 96" {...props}>
-      <circle cx="48" cy="48" r="44" fill="currentColor" opacity="0.08" />
-      <path
-        d="M58.8 22.5c-13.5 2-22.7 11.7-23.6 24.1-.5 7.1 1.7 13.5 6.4 18.7"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeWidth="2"
-        opacity="0.55"
-      />
-      <path
-        d="M60.8 31.8c-4.3 3.2-7.2 6.8-8.7 10.8 4.5.2 8.2 1.6 11.1 4.2"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="1.8"
-        opacity="0.45"
-      />
-      <path
-        d="M24.5 39.8h21v22.5h-21z"
-        fill="none"
-        stroke="currentColor"
-        strokeLinejoin="round"
-        strokeWidth="1.8"
-        opacity="0.62"
-      />
-      <path
-        d="M29.5 46.5h10.3M29.5 52.7h8"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeWidth="1.6"
-        opacity="0.56"
-      />
-      <circle
-        cx="56.5"
-        cy="62.5"
-        r="10.5"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2.4"
-      />
-      <path
-        d="m64.2 70.2 8.8 8.8"
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeWidth="3"
-      />
-    </SvgIcon>
-  );
-}
-
 export function PhilosophySection() {
   const theme = useTheme();
   const headingColor = theme.palette.brand.heading;
@@ -148,7 +92,7 @@ export function PhilosophySection() {
       id="philosophy"
       sx={{
         py: { xs: 5, md: 7 },
-        bgcolor: "#FBF7F1",
+        background: "#EEDDD5",
       }}
     >
       <Stack spacing={{ xs: 3.5, md: 5 }}>
