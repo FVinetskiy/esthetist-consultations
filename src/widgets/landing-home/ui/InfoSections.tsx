@@ -5,29 +5,89 @@ import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Grid from "@mui/material/Grid";
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemIcon from "@mui/material/ListItemIcon";
-import ListItemText from "@mui/material/ListItemText";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 import { alpha, useTheme } from "@mui/material/styles";
 import { useTranslation } from "react-i18next";
 import { Section } from "./Section";
 
-function DashItem({ text }: { text: string }) {
+type WorkStep = {
+  title: string;
+  body?: string;
+};
+
+function WorkStepItem({ index, step }: { index: number; step: WorkStep }) {
+  const theme = useTheme();
+  const h = theme.palette.brand.heading;
+  const light = theme.palette.mode === "light";
+
   return (
-    <ListItem disableGutters sx={{ alignItems: "flex-start", py: 0.35 }}>
-      <ListItemIcon sx={{ minWidth: 28, mt: 0.35 }}>
-        <Typography component="span" color="primary">
-          ⁃
+    <Box
+      sx={{
+        display: "grid",
+        gridTemplateColumns: "30px 1fr",
+        columnGap: 1.25,
+        alignItems: "flex-start",
+        borderRadius: 2,
+        border: `1px solid ${alpha(h, light ? 0.1 : 0.18)}`,
+        bgcolor: light
+          ? alpha(theme.palette.background.paper, 0.58)
+          : alpha(theme.palette.background.paper, 0.36),
+        p: 1.5,
+      }}
+    >
+      <Box
+        sx={{
+          width: 30,
+          height: 30,
+          borderRadius: "50%",
+          display: "grid",
+          placeItems: "center",
+          bgcolor: alpha(theme.palette.primary.main, 0.1),
+          color: "primary.main",
+          fontSize: 13,
+          fontWeight: 700,
+          lineHeight: 1,
+          mt: 0.1,
+        }}
+        aria-hidden
+      >
+        {index + 1}
+      </Box>
+      <Box>
+        <Typography variant="subtitle2" sx={{ color: h, lineHeight: 1.45 }}>
+          {step.title}
         </Typography>
-      </ListItemIcon>
-      <ListItemText
-        primary={text}
-        primaryTypographyProps={{ variant: "body2", lineHeight: 1.55 }}
-      />
-    </ListItem>
+        {step.body ? (
+          <Typography
+            variant="body2"
+            color="text.secondary"
+            sx={{ mt: 0.75, lineHeight: 1.65, whiteSpace: "pre-line" }}
+          >
+            {step.body}
+          </Typography>
+        ) : null}
+      </Box>
+    </Box>
+  );
+}
+
+function StepConnector() {
+  return (
+    <Box
+      aria-hidden
+      sx={{
+        display: "flex",
+        justifyContent: "center",
+        color: "primary.main",
+        fontSize: 18,
+        lineHeight: 1,
+        mt: -0.25,
+        mb: -1.2,
+      }}
+    >
+      ↓
+    </Box>
   );
 }
 
@@ -120,28 +180,12 @@ function InfoPanelCard({
 export function InfoSections() {
   const { t } = useTranslation();
 
-  const steps = t("landing.workCard.steps", { returnObjects: true }) as string[];
-  const afterItems = t("landing.workCard.afterItems", {
-    returnObjects: true,
-  }) as string[];
-  const supportBullets = t("landing.workCard.supportBullets", {
-    returnObjects: true,
-  }) as string[];
-  const shortBullets = t("landing.audienceCard.shortBullets", {
-    returnObjects: true,
-  }) as string[];
-  const fullItems = t("landing.audienceCard.fullItems", {
-    returnObjects: true,
-  }) as string[];
-  const notForItems = t("landing.audienceCard.notForItems", {
-    returnObjects: true,
-  }) as string[];
-  const teasers = t("landing.principlesCard.teasers", {
-    returnObjects: true,
-  }) as string[];
-  const principlesBody = t("landing.principlesCard.body", {
-    returnObjects: true,
-  }) as string[];
+  const rawSteps = t("landing.workCard.steps", { returnObjects: true }) as Array<
+    WorkStep | string
+  >;
+  const steps = rawSteps.map((step) =>
+    typeof step === "string" ? { title: step } : step,
+  );
 
   return (
     <Section id="how-it-works">
@@ -151,94 +195,21 @@ export function InfoSections() {
         columns={12}
         alignItems={{ xs: "stretch", md: "flex-start" }}
       >
-        <Grid size={{ xs: 12, md: 4 }}>
-          <InfoPanelCard
-            title={t("landing.workCard.title")}
-          >
-            <List dense disablePadding>
-              {steps.map((s) => (
-                <DashItem key={s} text={s} />
-              ))}
-            </List>
-            <Typography variant="subtitle2" sx={{ mt: 2, mb: 0.75 }}>
-              {t("landing.workCard.formatTitle")}
-            </Typography>
+        <Grid size={{ xs: 12 }}>
+          <InfoPanelCard title={t("landing.workCard.title")}>
             <Typography
               variant="body2"
               color="text.secondary"
-              sx={{ mb: 2, lineHeight: 1.65 }}
+              sx={{ mb: 2.25, lineHeight: 1.65 }}
             >
-              {t("landing.workCard.formatText")}
+              {t("landing.workCard.lead")}
             </Typography>
-            <Typography variant="subtitle2" sx={{ mb: 0.5 }}>
-              {t("landing.workCard.afterTitle")}
-            </Typography>
-            <List dense disablePadding>
-              {afterItems.map((s) => (
-                <DashItem key={s} text={s} />
-              ))}
-            </List>
-            <Typography variant="subtitle2" sx={{ mt: 2, mb: 0.5 }}>
-              {t("landing.workCard.supportTitle")}
-            </Typography>
-            <List dense disablePadding>
-              {supportBullets.map((s) => (
-                <DashItem key={s} text={s} />
-              ))}
-            </List>
-          </InfoPanelCard>
-        </Grid>
-
-        <Grid size={{ xs: 12, md: 4 }}>
-          <InfoPanelCard
-            title={t("landing.audienceCard.title")}
-            titleNoWrap
-          >
-            <List dense disablePadding>
-              {shortBullets.map((s) => (
-                <DashItem key={s} text={s} />
-              ))}
-            </List>
-            <Typography variant="subtitle2" sx={{ mt: 2, mb: 1 }}>
-              {t("landing.audienceCard.fullTitle")}
-            </Typography>
-            <List dense disablePadding>
-              {fullItems.map((s) => (
-                <DashItem key={s} text={s} />
-              ))}
-            </List>
-            <Typography variant="subtitle2" sx={{ mt: 2, mb: 1 }}>
-              {t("landing.audienceCard.notForTitle")}
-            </Typography>
-            <List dense disablePadding>
-              {notForItems.map((s) => (
-                <DashItem key={s} text={s} />
-              ))}
-            </List>
-            <Typography
-              variant="body2"
-              color="text.secondary"
-              sx={{ mt: 2, lineHeight: 1.65 }}
-            >
-              {t("landing.audienceCard.notForNote")}
-            </Typography>
-          </InfoPanelCard>
-        </Grid>
-
-        <Grid size={{ xs: 12, md: 4 }}>
-          <InfoPanelCard
-            title={t("landing.principlesCard.title")}
-          >
-            <List dense disablePadding>
-              {teasers.map((s) => (
-                <DashItem key={s} text={s} />
-              ))}
-            </List>
-            <Stack spacing={2} sx={{ mt: 2 }}>
-              {principlesBody.map((para) => (
-                <Typography key={para.slice(0, 40)} variant="body2" lineHeight={1.65}>
-                  {para}
-                </Typography>
+            <Stack spacing={1.5}>
+              {steps.map((step, index) => (
+                <Box key={`${index}-${step.title}`}>
+                  <WorkStepItem index={index} step={step} />
+                  {index < steps.length - 1 ? <StepConnector /> : null}
+                </Box>
               ))}
             </Stack>
           </InfoPanelCard>
