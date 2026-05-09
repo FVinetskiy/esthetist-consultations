@@ -23,7 +23,7 @@ const supportCards = [
     body: "Формирую подборки из современных сильных формул: оцениваю активы, базу средства, рабочие концентрации и доказательность компонентов.",
   },
   {
-    title: "Схема в синергии",
+    title: "Синергия схемы",
     body: "Каждая позиция ухода дополняет другую и работает по разным звеньям проблемы, чтобы схема максимально эффективно вела к задачам коррекции.",
   },
   {
@@ -32,21 +32,30 @@ const supportCards = [
   },
 ];
 
+const priorityScheme = {
+  main: "Сначала стабилизация барьера, чувствительности и сосудистых реакций",
+  bridge: "Затем - активы под",
+  items: ["Пигментация", "Воспаления", "Текстура", "Anti-age коррекция"],
+};
+
 function AnalysisMarkIcon(props: SvgIconProps) {
   return (
     <SvgIcon viewBox="0 0 24 24" {...props}>
       <path
-        d="M12 2.8c3.4 3 6.4 6.5 6.4 10.4a6.4 6.4 0 0 1-12.8 0C5.6 9.3 8.6 5.8 12 2.8Z"
-        fill="currentColor"
-        opacity="0.18"
-      />
-      <path
-        d="M8.7 12.4 11 14.7l4.5-5"
+        d="M12 4.4c1.9 0 3.4 1.5 3.4 3.4v7.7a3.4 3.4 0 0 1-6.8 0V7.8c0-1.9 1.5-3.4 3.4-3.4Z"
         fill="none"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
-        strokeWidth="1.8"
+        strokeWidth="1.6"
+      />
+      <path
+        d="M8.6 15.3c-1.4.2-2.5 1.4-2.5 2.8 0 1.1.9 2 2 2h7.8c1.1 0 2-.9 2-2 0-1.4-1.1-2.6-2.5-2.8"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="1.6"
       />
     </SvgIcon>
   );
@@ -55,7 +64,6 @@ function AnalysisMarkIcon(props: SvgIconProps) {
 function MiniCheckIcon(props: SvgIconProps) {
   return (
     <SvgIcon viewBox="0 0 16 16" {...props}>
-      <circle cx="8" cy="8" r="7" fill="currentColor" opacity="0.2" />
       <path
         d="m4.8 8.2 2 2 4.5-5"
         fill="none"
@@ -139,7 +147,7 @@ export function PhilosophySection() {
                 height: "100%",
                 borderRadius: { xs: 3, md: 4 },
                 border: `1px solid ${alpha("#8E6E62", 0.18)}`,
-                bgcolor: alpha("#fff", 0.5),
+                background: "#FBF7F1",
                 boxShadow: `0 22px 54px ${alpha("#8E6E62", 0.13)}`,
                 px: { xs: 2.5, sm: 4, md: 5.5 },
                 py: { xs: 4, md: 5 },
@@ -337,17 +345,157 @@ export function PhilosophySection() {
                     >
                       {card.title}
                     </Typography>
-                    <Typography
-                      variant="body2"
-                      color="text.secondary"
-                      sx={{
-                        maxWidth: 360,
-                        lineHeight: 1.65,
-                        ...(index === 0 && { color: alpha("#fff", 0.88) }),
-                      }}
-                    >
-                      {card.body}
-                    </Typography>
+                    {index === 2 ? (
+                      <Box
+                        sx={{
+                          pt: 0.4,
+                          display: "grid",
+                          gap: 1.15,
+                        }}
+                      >
+                        <Box
+                          sx={{
+                            mx: "auto",
+                            width: "min(100%, 276px)",
+                            borderRadius: 2,
+                            border: `1px solid ${alpha("#8E6E62", 0.13)}`,
+                            bgcolor: alpha("#fff", 0.58),
+                            boxShadow: `0 10px 28px ${alpha("#8E6E62", 0.11)}`,
+                            px: { xs: 1.35, sm: 1.6 },
+                            py: 1.15,
+                            textAlign: "center",
+                          }}
+                        >
+                          <Typography
+                            variant="body2"
+                            sx={{
+                              color: headingColor,
+                              fontSize: { xs: 12.5, sm: 13 },
+                              lineHeight: 1.28,
+                              fontWeight: 500,
+                            }}
+                          >
+                            {priorityScheme.main}
+                          </Typography>
+                        </Box>
+
+                        <Box
+                          sx={{
+                            mx: "auto",
+                            width: "100%",
+                            display: "flex",
+                            justifyContent: "center",
+                            position: "relative",
+                            pb: 1.1,
+                            "&::before": {
+                              content: '""',
+                              position: "absolute",
+                              left: "50%",
+                              bottom: 0,
+                              width: 2,
+                              height: 9,
+                              transform: "translate(-1px, 0)",
+                              bgcolor: "#8E6E62",
+                            },
+                            "&::after": {
+                              content: '""',
+                              position: "absolute",
+                              left: "50%",
+                              bottom: 0,
+                              width: "100%",
+                              maxWidth: "76%",
+                              height: 2,
+                              transform: "translate(-50%, 0)",
+                              bgcolor: "#8E6E62",
+                            },
+                          }}
+                        >
+                          <Typography
+                            variant="caption"
+                            sx={{
+                              display: "inline-flex",
+                              alignItems: "center",
+                              justifyContent: "center",
+                              borderRadius: 999,
+                              border: `1px solid ${alpha("#8E6E62", 0.1)}`,
+                              bgcolor: alpha("#fff", 0.58),
+                              px: 1,
+                              py: 0.35,
+                              color: alpha(headingColor, 0.5),
+                              fontSize: 9.5,
+                              lineHeight: 1.2,
+                              fontWeight: 500,
+                              whiteSpace: "nowrap",
+                            }}
+                          >
+                            {priorityScheme.bridge}
+                          </Typography>
+                        </Box>
+
+                        <Box
+                          sx={{
+                            display: "grid",
+                            gridTemplateColumns: {
+                              xs: "repeat(2, minmax(0, 1fr))",
+                              sm: "repeat(4, minmax(0, 1fr))",
+                            },
+                            gap: 0.75,
+                          }}
+                        >
+                          {priorityScheme.items.map((item) => (
+                            <Box
+                              key={item}
+                              sx={{
+                                position: "relative",
+                                minHeight: 48,
+                                borderRadius: 1.5,
+                                border: `1px solid ${alpha("#8E6E62", 0.12)}`,
+                                bgcolor: alpha("#fff", 0.52),
+                                boxShadow: `0 7px 16px ${alpha("#8E6E62", 0.08)}`,
+                                display: "grid",
+                                placeItems: "center",
+                                px: 0.55,
+                                textAlign: "center",
+                                "&::before": {
+                                  content: '""',
+                                  position: "absolute",
+                                  left: "50%",
+                                  top: -12,
+                                  width: 2,
+                                  height: 12,
+                                  transform: "translate(-1px, 0)",
+                                  bgcolor: "#8E6E62",
+                                },
+                              }}
+                            >
+                              <Typography
+                                variant="caption"
+                                sx={{
+                                  color: "text.secondary",
+                                  fontSize: { xs: 9.8, sm: 9.4 },
+                                  lineHeight: 1.18,
+                                  fontWeight: 500,
+                                }}
+                              >
+                                {item}
+                              </Typography>
+                            </Box>
+                          ))}
+                        </Box>
+                      </Box>
+                    ) : (
+                      <Typography
+                        variant="body2"
+                        color="text.secondary"
+                        sx={{
+                          maxWidth: 360,
+                          lineHeight: 1.65,
+                          ...(index === 0 && { color: alpha("#fff", 0.88) }),
+                        }}
+                      >
+                        {card.body}
+                      </Typography>
+                    )}
                   </Stack>
                 </Box>
               ))}
