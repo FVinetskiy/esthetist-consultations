@@ -13,7 +13,6 @@ import { useTranslation } from "react-i18next";
 import { showcaseMedia } from "@/shared/config/showcase-media";
 import { Section } from "../Section";
 import { BeforeAfterSlider } from "./BeforeAfterSlider";
-import { MarqueeStrip } from "./MarqueeStrip";
 
 function StarsRow({ count = 5 }: { count?: number }) {
   return (
@@ -233,37 +232,6 @@ export function ShowcaseSection() {
                   </Box>
                 </Grid>
               </Grid>
-
-              <Box sx={{ ...cardShell, p: { xs: 2, sm: 2.5 } }}>
-                <Stack spacing={1.25} sx={{ mb: 2.5 }}>
-                  <MarqueeStrip images={showcaseMedia.marqueeA} durationSec={52} />
-                  <MarqueeStrip
-                    images={showcaseMedia.marqueeB}
-                    durationSec={64}
-                    reverse
-                  />
-                  <MarqueeStrip images={showcaseMedia.marqueeC} durationSec={58} />
-                </Stack>
-                <Stack spacing={0.75} sx={{ textAlign: { xs: "left", sm: "center" } }}>
-                  <Typography
-                    variant="h5"
-                    sx={{
-                      color: h,
-                      fontFamily: theme.typography.h2.fontFamily,
-                      fontWeight: 500,
-                    }}
-                  >
-                    {t("landing.showcase.tailoredTitle")}
-                  </Typography>
-                  <Typography
-                    variant="body2"
-                    color="text.secondary"
-                    sx={{ maxWidth: 520, mx: { sm: "auto" }, lineHeight: 1.65 }}
-                  >
-                    {t("landing.showcase.tailoredSubtitle")}
-                  </Typography>
-                </Stack>
-              </Box>
 
               <Box sx={{ ...cardShell, p: { xs: 2, sm: 2.5 } }}>
                 <Stack

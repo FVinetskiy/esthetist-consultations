@@ -136,25 +136,6 @@ export function SiteHeader() {
         >
           <ThemeToggleButton />
           <LanguageToggleButton />
-          <Button
-            component={Link}
-            href="/contacts"
-            variant="contained"
-            color="primary"
-            size="small"
-            sx={{
-              display: { xs: "none", sm: "inline-flex" },
-              fontWeight: 600,
-              fontSize: "0.8125rem",
-              px: 1.75,
-              py: 0.65,
-              whiteSpace: "nowrap",
-              boxShadow: "none",
-              "&:hover": { boxShadow: "none" },
-            }}
-          >
-            {t("nav.call")}
-          </Button>
         </Stack>
         </Container>
       </Toolbar>

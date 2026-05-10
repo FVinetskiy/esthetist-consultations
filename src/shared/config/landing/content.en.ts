@@ -2,8 +2,10 @@ export const landingEn = {
   hero: {
     title: "Mindful skincare grounded in skin physiology and cosmetic chemistry",
     subtitle:
-      "Personal routines without one-size-fits-all tips, marketing myths, or overwhelming your skin.",
+      "A personal skincare system through skin analysis, formula review, and the logic of combining products into one routine.",
     ctaBook: "Book a consultation",
+    ctaDetails: "Learn more",
+    tariffsLink: "View tariffs",
     imageAlt: "Consultant portrait",
     photoPlaceholder: "Your large photo here — as in the mockup",
     floatCards: [
@@ -49,6 +51,7 @@ export const landingEn = {
     sectionLead:
       "Pick a support level — full details open from the buttons on each card.",
     markersTitle: "At a glance",
+    includesTitle: "What is included:",
     detailsToggle: "Analytics, materials & support",
     fitToggle: "Who it’s for",
     dialogClose: "Got it",
@@ -176,17 +179,13 @@ export const landingEn = {
     materialsCollapsedHint: "Materials live inside the “Details” section",
   },
   freeGuide: {
-    title: "Get the free basic-care guide",
-    insideTitle: "What’s inside",
-    points: [
-      "how to read your skin’s current state",
-      "a baseline care framework",
-      "common mistakes",
-      "when to see a specialist",
+    title: "Foundation first — actives second",
+    paragraphs: [
+      "If cleansing leaves tightness, burning, redness, flaking, or your usual routine suddenly starts irritating your skin, it may point to a compromised barrier.",
+      "When the barrier is impaired, skin holds less water, reacts faster to external triggers, and can become reactive even to good actives.",
+      "The foundation comes first: gentle cleansing, hydration, microbiome support, barrier lipids, SPF, and thoughtful renewal.",
     ],
-    cta: "Get it free",
-    promoNote:
-      "This is a promo version of the materials you receive after a consultation.",
+    cta: "Get the basic skincare guide",
   },
   workCard: {
     title: "How we work",

@@ -96,13 +96,15 @@ export function FaqSection() {
         <Typography variant="h2" sx={{ color: h, textAlign: "center", lineHeight: 1.12, maxWidth: 820 }}>
           {t("landing.faq.title")}
         </Typography>
-        <Typography
-          variant="body1"
-          color="text.secondary"
-          sx={{ lineHeight: 1.72, maxWidth: 760, textAlign: "center" }}
-        >
-          {t("landing.faq.lead")}
-        </Typography>
+        {t("landing.faq.lead") ? (
+          <Typography
+            variant="body1"
+            color="text.secondary"
+            sx={{ lineHeight: 1.72, maxWidth: 760, textAlign: "center" }}
+          >
+            {t("landing.faq.lead")}
+          </Typography>
+        ) : null}
       </Stack>
 
       <Grid ref={cardsWrapRef} container spacing={{ xs: 1.15, md: 1.5 }} sx={{ mb: 3 }}>
@@ -196,7 +198,7 @@ export function FaqSection() {
                           key={para.slice(0, 48)}
                           variant="body2"
                           color="text.secondary"
-                          lineHeight={1.75}
+                          sx={{ lineHeight: 1.75, whiteSpace: "pre-line" }}
                         >
                           {para}
                         </Typography>

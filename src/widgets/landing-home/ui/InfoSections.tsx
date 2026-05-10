@@ -5,6 +5,8 @@ import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Grid from "@mui/material/Grid";
+import List from "@mui/material/List";
+import ListItem from "@mui/material/ListItem";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 import { alpha, useTheme } from "@mui/material/styles";
@@ -15,6 +17,30 @@ type WorkStep = {
   title: string;
   body?: string;
 };
+
+function BulletItem({ text }: { text: string }) {
+  const theme = useTheme();
+
+  return (
+    <ListItem disableGutters sx={{ alignItems: "flex-start", gap: 1.15, py: 0.45 }}>
+      <Box
+        aria-hidden
+        sx={{
+          width: 7,
+          height: 7,
+          borderRadius: "50%",
+          bgcolor: "primary.main",
+          boxShadow: `0 0 0 4px ${alpha(theme.palette.primary.main, 0.12)}`,
+          mt: 0.85,
+          flexShrink: 0,
+        }}
+      />
+      <Typography variant="body2" sx={{ lineHeight: 1.62 }}>
+        {text}
+      </Typography>
+    </ListItem>
+  );
+}
 
 function WorkStepItem({ index, step }: { index: number; step: WorkStep }) {
   const theme = useTheme();
@@ -183,6 +209,12 @@ export function InfoSections() {
   const rawSteps = t("landing.workCard.steps", { returnObjects: true }) as Array<
     WorkStep | string
   >;
+  const fullItems = t("landing.audienceCard.fullItems", {
+    returnObjects: true,
+  }) as string[];
+  const notForItems = t("landing.audienceCard.notForItems", {
+    returnObjects: true,
+  }) as string[];
   const steps = rawSteps.map((step) =>
     typeof step === "string" ? { title: step } : step,
   );
@@ -212,6 +244,73 @@ export function InfoSections() {
                 </Box>
               ))}
             </Stack>
+          </InfoPanelCard>
+        </Grid>
+
+        <Grid size={{ xs: 12 }}>
+          <InfoPanelCard title={t("landing.audienceCard.title")}>
+            <Grid container spacing={{ xs: 2.5, md: 3 }}>
+              <Grid size={{ xs: 12, md: 7 }}>
+                <Typography
+                  variant="subtitle2"
+                  sx={{
+                    color: (theme) => theme.palette.brand.heading,
+                    mb: 1,
+                    lineHeight: 1.45,
+                  }}
+                >
+                  {t("landing.audienceCard.fullTitle")}
+                </Typography>
+                <List disablePadding>
+                  {fullItems.map((item) => (
+                    <BulletItem key={item} text={item} />
+                  ))}
+                </List>
+              </Grid>
+              <Grid size={{ xs: 12, md: 5 }}>
+                <Box
+                  sx={{
+                    height: "100%",
+                    borderRadius: 2,
+                    border: "1px solid",
+                    borderColor: (theme) =>
+                      alpha(
+                        theme.palette.brand.heading,
+                        theme.palette.mode === "light" ? 0.1 : 0.18,
+                      ),
+                    bgcolor: (theme) =>
+                      alpha(
+                        theme.palette.background.paper,
+                        theme.palette.mode === "light" ? 0.44 : 0.3,
+                      ),
+                    p: 2,
+                  }}
+                >
+                  <Typography
+                    variant="subtitle2"
+                    sx={{
+                      color: (theme) => theme.palette.brand.heading,
+                      mb: 1,
+                      lineHeight: 1.45,
+                    }}
+                  >
+                    {t("landing.audienceCard.notForTitle")}
+                  </Typography>
+                  <List disablePadding>
+                    {notForItems.map((item) => (
+                      <BulletItem key={item} text={item} />
+                    ))}
+                  </List>
+                  <Typography
+                    variant="body2"
+                    color="text.secondary"
+                    sx={{ mt: 1.5, lineHeight: 1.65, whiteSpace: "pre-line" }}
+                  >
+                    {t("landing.audienceCard.notForNote")}
+                  </Typography>
+                </Box>
+              </Grid>
+            </Grid>
           </InfoPanelCard>
         </Grid>
       </Grid>

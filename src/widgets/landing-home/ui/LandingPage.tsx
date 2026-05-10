@@ -9,6 +9,7 @@ import { HeroSection } from "./HeroSection";
 import { InfoSections } from "./InfoSections";
 import { PhilosophySection } from "./PhilosophySection";
 import { ReviewsSection } from "./ReviewsSection";
+import { TailoredShowcaseSection } from "./showcase/TailoredShowcaseSection";
 import { TariffsSection } from "./TariffsSection";
 
 export function LandingPage() {
@@ -21,6 +22,14 @@ export function LandingPage() {
       <RevealOnScroll direction="left" offsetPx={52} durationSec={0.62}>
         <InfoSections />
       </RevealOnScroll>
+      <RevealOnScroll direction="right" offsetPx={52} durationSec={0.62}>
+        <TailoredShowcaseSection />
+      </RevealOnScroll>
+      {/*
+      <RevealOnScroll direction="right" offsetPx={52} durationSec={0.62}>
+        <ShowcaseSection />
+      </RevealOnScroll>
+      */}
       <RevealOnScroll direction="left" offsetPx={52} durationSec={0.62}>
         <TariffsSection />
       </RevealOnScroll>

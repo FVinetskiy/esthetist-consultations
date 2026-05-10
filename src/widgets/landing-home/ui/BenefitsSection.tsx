@@ -75,7 +75,11 @@ export function BenefitsSection() {
                     <Typography variant="h6" sx={{ color: heading, mb: 0.4, lineHeight: 1.28 }}>
                       {item.title}
                     </Typography>
-                    <Typography variant="body2" color="text.secondary" sx={{ lineHeight: 1.65 }}>
+                    <Typography
+                      variant="body2"
+                      color="text.secondary"
+                      sx={{ lineHeight: 1.65, whiteSpace: "pre-line" }}
+                    >
                       {item.body}
                     </Typography>
                   </Box>
@@ -138,7 +142,11 @@ export function BenefitsSection() {
                     <Typography variant="h6" sx={{ color: heading, mb: 0.4, lineHeight: 1.28 }}>
                       {item.title}
                     </Typography>
-                    <Typography variant="body2" color="text.secondary" sx={{ lineHeight: 1.65 }}>
+                    <Typography
+                      variant="body2"
+                      color="text.secondary"
+                      sx={{ lineHeight: 1.65, whiteSpace: "pre-line" }}
+                    >
                       {item.body}
                     </Typography>
                   </Box>

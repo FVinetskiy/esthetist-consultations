@@ -7,13 +7,16 @@ import CardContent from "@mui/material/CardContent";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 import { alpha } from "@mui/material/styles";
-import Link from "next/link";
 import { useTranslation } from "react-i18next";
 import { Section } from "./Section";
 
+const GUIDE_DOWNLOAD_PATH = "/downloads/basic-skincare-guide.pdf";
+
 export function FreeGuideSection() {
   const { t } = useTranslation();
-  const points = t("landing.freeGuide.points", { returnObjects: true }) as string[];
+  const paragraphs = t("landing.freeGuide.paragraphs", {
+    returnObjects: true,
+  }) as string[];
 
   return (
     <Section id="free-guide" tinted>
@@ -65,35 +68,22 @@ export function FreeGuideSection() {
             <Typography variant="h3" sx={{ color: (theme) => theme.palette.brand.heading, maxWidth: 660 }}>
               {t("landing.freeGuide.title")}
             </Typography>
-            <Typography variant="body1" color="text.secondary" sx={{ maxWidth: 620, lineHeight: 1.7 }}>
-              {t("landing.freeGuide.promoNote")}
-            </Typography>
-            <Typography variant="subtitle2" sx={{ color: "text.secondary", letterSpacing: 0.2 }}>
-              {t("landing.freeGuide.insideTitle")}
-            </Typography>
-            <Stack direction="row" flexWrap="wrap" justifyContent="center" gap={1}>
-              {points.map((pt) => (
-                <Box
-                  key={pt}
-                  sx={{
-                    px: 1.25,
-                    py: 0.65,
-                    borderRadius: 999,
-                    bgcolor: (th) => alpha(th.palette.background.paper, th.palette.mode === "light" ? 0.72 : 0.2),
-                    border: "1px solid",
-                    borderColor: (th) => alpha(th.palette.divider, 0.65),
-                    color: "text.secondary",
-                    fontSize: 14,
-                    lineHeight: 1.2,
-                  }}
+            <Stack spacing={1.35} sx={{ maxWidth: 760 }}>
+              {paragraphs.map((paragraph) => (
+                <Typography
+                  key={paragraph}
+                  variant="body1"
+                  color="text.secondary"
+                  sx={{ lineHeight: 1.75 }}
                 >
-                  {pt}
-                </Box>
+                  {paragraph}
+                </Typography>
               ))}
             </Stack>
             <Button
-              component={Link}
-              href="/contacts"
+              component="a"
+              href={GUIDE_DOWNLOAD_PATH}
+              download
               variant="contained"
               size="large"
               sx={{
