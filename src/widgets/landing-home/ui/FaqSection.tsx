@@ -30,7 +30,7 @@ export function FaqSection() {
 
   const shellBase = {
     borderRadius: 3.5,
-    bgcolor: light ? alpha("#fff", 0.58) : alpha("#fff", 0.03),
+    bgcolor: "#FBF7F1",
     border: `1px solid ${alpha(h, light ? 0.1 : 0.2)}`,
     boxShadow: light ? `0 6px 22px ${alpha(h, 0.06)}` : `0 8px 24px rgba(0,0,0,0.3)`,
     overflow: "hidden",

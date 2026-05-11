@@ -5,7 +5,6 @@ import Container from "@mui/material/Container";
 import Link from "@mui/material/Link";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
-import { alpha } from "@mui/material/styles";
 import NextLink from "next/link";
 import { useTranslation } from "react-i18next";
 import { RevealOnScroll } from "@/shared/ui/reveal-on-scroll";
@@ -21,14 +20,6 @@ export function SiteFooter() {
         mt: "auto",
         borderTop: 1,
         borderColor: "divider",
-        boxShadow: (theme) =>
-          theme.palette.mode === "light"
-            ? `0 -10px 40px ${alpha(theme.palette.brand.heading, 0.06)}`
-            : "0 -12px 40px rgba(0,0,0,0.25)",
-        bgcolor: (theme) =>
-          theme.palette.mode === "light"
-            ? theme.palette.brand.paper
-            : "background.paper",
         py: 4,
       }}
     >

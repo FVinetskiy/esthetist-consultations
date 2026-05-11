@@ -28,7 +28,7 @@ export function TailoredShowcaseSection() {
           maxWidth: 1120,
           mx: "auto",
           display: "grid",
-          gridTemplateColumns: { xs: "1fr", md: "45fr 55fr" },
+          gridTemplateColumns: "1fr",
           gap: { xs: 2, md: 3 },
           alignItems: "stretch",
         }}
@@ -113,21 +113,15 @@ export function TailoredShowcaseSection() {
             <MarqueeStrip
               images={showcaseMedia.marqueeA}
               durationSec={52}
-              cellSize={72}
-              gapPx={10}
+              cellSize={90}
+              gapPx={13}
             />
             <MarqueeStrip
               images={showcaseMedia.marqueeB}
               durationSec={64}
               reverse
-              cellSize={72}
-              gapPx={10}
-            />
-            <MarqueeStrip
-              images={showcaseMedia.marqueeC}
-              durationSec={58}
-              cellSize={72}
-              gapPx={10}
+              cellSize={90}
+              gapPx={13}
             />
           </Stack>
         </Box>

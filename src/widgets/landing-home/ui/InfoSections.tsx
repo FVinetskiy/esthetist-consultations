@@ -21,6 +21,9 @@ type WorkStep = {
   body?: string;
 };
 
+const AUDIENCE_IMAGE =
+  "https://images.pexels.com/photos/4586740/pexels-photo-4586740.jpeg?auto=compress&cs=tinysrgb&w=900";
+
 function BulletItem({ text }: { text: string }) {
   const theme = useTheme();
 
@@ -176,19 +179,21 @@ function InfoPanelCard({
           pb: 3,
         }}
       >
-        <Typography
-          variant="h3"
-          sx={{
-            color: h,
-            fontWeight: 600,
-            mb: subtitle ? 1 : 1.5,
-            lineHeight: 1.3,
-            whiteSpace: titleNoWrap ? "nowrap" : "normal",
-            letterSpacing: titleNoWrap ? "0" : undefined,
-          }}
-        >
-          {title}
-        </Typography>
+        {title ? (
+          <Typography
+            variant="h3"
+            sx={{
+              color: h,
+              fontWeight: 600,
+              mb: subtitle ? 1 : 1.5,
+              lineHeight: 1.3,
+              whiteSpace: titleNoWrap ? "nowrap" : "normal",
+              letterSpacing: titleNoWrap ? "0" : undefined,
+            }}
+          >
+            {title}
+          </Typography>
+        ) : null}
         {subtitle ? (
           <Typography
             variant="subtitle1"
@@ -259,101 +264,140 @@ export function InfoSections() {
       <Section sx={{ background: "#EEDDD5" }}>
         <Grid container columns={12}>
           <Grid size={{ xs: 12 }}>
-            <InfoPanelCard title={t("landing.audienceCard.title")}>
-            <Stack spacing={2.5}>
-              <Box>
-                <Typography
-                  variant="subtitle2"
-                  sx={{
-                    color: (theme) => theme.palette.brand.heading,
-                    mb: 1,
-                    lineHeight: 1.45,
-                  }}
-                >
-                  {t("landing.audienceCard.fullTitle")}
-                </Typography>
-                <List disablePadding>
-                  {fullItems.map((item) => (
-                    <BulletItem key={item} text={item} />
-                  ))}
-                </List>
-              </Box>
-
-              <Box>
-                <Box
-                  sx={{
-                    borderRadius: 2,
-                    border: "1px solid",
-                    borderColor: (theme) =>
-                      alpha(
-                        theme.palette.brand.heading,
-                        theme.palette.mode === "light" ? 0.1 : 0.18,
-                      ),
-                    bgcolor: (theme) =>
-                      alpha(
-                        theme.palette.background.paper,
-                        theme.palette.mode === "light" ? 0.44 : 0.3,
-                      ),
-                    p: 2,
-                  }}
-                >
-                  <ButtonBase
-                    onClick={() => setIsNotForOpen((value) => !value)}
-                    aria-expanded={isNotForOpen}
+            <InfoPanelCard title="" sx={{ bgcolor: "#FBF7F1" }}>
+              <Grid container spacing={{ xs: 2.5, md: 3 }} alignItems="stretch">
+                <Grid size={{ xs: 12, md: 5 }}>
+                  <Box
+                    component="img"
+                    src={AUDIENCE_IMAGE}
+                    alt="Консультация по уходу за кожей"
+                    loading="lazy"
                     sx={{
+                      display: "block",
                       width: "100%",
-                      justifyContent: "space-between",
-                      gap: 1,
-                      py: 0.5,
-                      textAlign: "left",
-                      borderRadius: 1,
-                      color: "text.primary",
-                      "&:focus-visible": {
-                        outline: "2px solid",
-                        outlineColor: "primary.main",
-                        outlineOffset: 2,
-                      },
+                      height: "100%",
+                      minHeight: { xs: 260, md: 520 },
+                      objectFit: "cover",
+                      objectPosition: "center",
+                      borderRadius: 2,
+                      border: "1px solid",
+                      borderColor: (theme) =>
+                        alpha(
+                          theme.palette.brand.heading,
+                          theme.palette.mode === "light" ? 0.1 : 0.18,
+                        ),
                     }}
-                  >
-                    <Typography
-                      variant="subtitle2"
-                      sx={{
-                        color: (theme) => theme.palette.brand.heading,
-                        lineHeight: 1.45,
-                      }}
-                    >
-                      {t("landing.audienceCard.notForTitle")}
-                    </Typography>
-                    <ExpandMoreIcon
-                      fontSize="small"
-                      sx={(theme) => ({
-                        color: "primary.main",
-                        transform: isNotForOpen ? "rotate(180deg)" : "rotate(0deg)",
-                        transition: theme.transitions.create("transform", {
-                          duration: theme.transitions.duration.shortest,
-                        }),
-                      })}
-                    />
-                  </ButtonBase>
-                  <Collapse in={isNotForOpen} timeout="auto" unmountOnExit>
-                    <Box sx={{ pt: 1 }}>
+                  />
+                </Grid>
+
+                <Grid size={{ xs: 12, md: 7 }}>
+                  <Stack spacing={2.5}>
+                    <Box>
+                      <Typography
+                        variant="h3"
+                        sx={{
+                          color: (theme) => theme.palette.brand.heading,
+                          fontWeight: 600,
+                          mb: 1.5,
+                          lineHeight: 1.3,
+                        }}
+                      >
+                        {t("landing.audienceCard.title")}
+                      </Typography>
+                      <Typography
+                        variant="subtitle2"
+                        sx={{
+                          color: (theme) => theme.palette.brand.heading,
+                          mb: 1,
+                          lineHeight: 1.45,
+                        }}
+                      >
+                        {t("landing.audienceCard.fullTitle")}
+                      </Typography>
                       <List disablePadding>
-                        {notForItems.map((item) => (
+                        {fullItems.map((item) => (
                           <BulletItem key={item} text={item} />
                         ))}
                       </List>
-                      <Typography
-                        variant="body2"
-                        color="text.secondary"
-                        sx={{ mt: 1.5, lineHeight: 1.65, whiteSpace: "pre-line" }}
-                      >
-                        {t("landing.audienceCard.notForNote")}
-                      </Typography>
                     </Box>
-                  </Collapse>
-                </Box>
-              </Box>
-            </Stack>
+
+                    <Box>
+                      <Box
+                        sx={{
+                          borderRadius: 2,
+                          border: "1px solid",
+                          borderColor: (theme) =>
+                            alpha(
+                              theme.palette.brand.heading,
+                              theme.palette.mode === "light" ? 0.1 : 0.18,
+                            ),
+                          bgcolor: (theme) =>
+                            alpha(
+                              theme.palette.background.paper,
+                              theme.palette.mode === "light" ? 0.44 : 0.3,
+                            ),
+                          p: 2,
+                        }}
+                      >
+                        <ButtonBase
+                          onClick={() => setIsNotForOpen((value) => !value)}
+                          aria-expanded={isNotForOpen}
+                          sx={{
+                            width: "100%",
+                            justifyContent: "space-between",
+                            gap: 1,
+                            py: 0.5,
+                            textAlign: "left",
+                            borderRadius: 1,
+                            color: "text.primary",
+                            "&:focus-visible": {
+                              outline: "2px solid",
+                              outlineColor: "primary.main",
+                              outlineOffset: 2,
+                            },
+                          }}
+                        >
+                          <Typography
+                            variant="subtitle2"
+                            sx={{
+                              color: (theme) => theme.palette.brand.heading,
+                              lineHeight: 1.45,
+                            }}
+                          >
+                            {t("landing.audienceCard.notForTitle")}
+                          </Typography>
+                          <ExpandMoreIcon
+                            fontSize="small"
+                            sx={(theme) => ({
+                              color: "primary.main",
+                              transform: isNotForOpen ? "rotate(180deg)" : "rotate(0deg)",
+                              transition: theme.transitions.create("transform", {
+                                duration: theme.transitions.duration.shortest,
+                              }),
+                            })}
+                          />
+                        </ButtonBase>
+                        <Collapse in={isNotForOpen} timeout="auto" unmountOnExit>
+                          <Box sx={{ pt: 1 }}>
+                            <List disablePadding>
+                              {notForItems.map((item) => (
+                                <BulletItem key={item} text={item} />
+                              ))}
+                            </List>
+                            <Typography
+                              variant="body2"
+                              color="text.secondary"
+                              sx={{ mt: 1.5, lineHeight: 1.65, whiteSpace: "pre-line" }}
+                            >
+                              {t("landing.audienceCard.notForNote")}
+                            </Typography>
+                          </Box>
+                        </Collapse>
+                      </Box>
+                    </Box>
+                  </Stack>
+                </Grid>
+              </Grid>
             </InfoPanelCard>
           </Grid>
         </Grid>

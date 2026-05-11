@@ -257,7 +257,7 @@ export function PhilosophySection() {
                           alignItems: "center",
                           mt: 0.5,
                           borderRadius: 2.5,
-                          bgcolor: alpha(accentColor, 0.09),
+                          bgcolor: "#F8F2EC",
                           px: { xs: 2, sm: 2.5 },
                           py: { xs: 2, sm: 2.25 },
                         }}

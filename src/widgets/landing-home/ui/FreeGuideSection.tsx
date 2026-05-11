@@ -31,7 +31,7 @@ export function FreeGuideSection() {
           border: "1px solid",
           borderColor: (theme) =>
             alpha(theme.palette.brand.heading, theme.palette.mode === "light" ? 0.14 : 0.22),
-          bgcolor: "transparent",
+          bgcolor: "#FBF7F1",
           backgroundImage: "none",
           boxShadow: "none",
         }}

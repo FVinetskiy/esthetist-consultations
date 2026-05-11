@@ -118,7 +118,7 @@ export function ReviewsSlider({ slides }: ReviewsSliderProps) {
                 flexDirection: "column",
                 borderRadius: 3,
                 border: `1px solid ${alpha(heading, light ? 0.12 : 0.2)}`,
-                bgcolor: alpha(theme.palette.background.paper, light ? 0.76 : 0.36),
+                bgcolor: "#FBF7F1",
                 overflow: "hidden",
                 position: "relative",
                 transition: "transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease",

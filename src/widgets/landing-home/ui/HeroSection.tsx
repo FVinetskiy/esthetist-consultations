@@ -9,12 +9,50 @@ import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 import { alpha, useTheme } from "@mui/material/styles";
 import NextLink from "next/link";
+import type { MouseEvent } from "react";
 import { useTranslation } from "react-i18next";
 
 export function HeroSection() {
   const { t } = useTranslation();
   const theme = useTheme();
   const light = theme.palette.mode === "light";
+
+  const handleTariffsClick = (event: MouseEvent<HTMLAnchorElement>) => {
+    const target = document.getElementById("tariffs");
+    if (!target) return;
+
+    event.preventDefault();
+
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const targetTop = target.getBoundingClientRect().top + window.scrollY - 12;
+
+    if (reduceMotion) {
+      window.scrollTo({ top: targetTop });
+      window.history.pushState(null, "", "#tariffs");
+      return;
+    }
+
+    const startTop = window.scrollY;
+    const distance = targetTop - startTop;
+    const durationMs = 620;
+    const startedAt = performance.now();
+
+    const easeOutCubic = (value: number) => 1 - Math.pow(1 - value, 3);
+
+    const step = (now: number) => {
+      const progress = Math.min((now - startedAt) / durationMs, 1);
+      window.scrollTo({ top: startTop + distance * easeOutCubic(progress) });
+
+      if (progress < 1) {
+        requestAnimationFrame(step);
+        return;
+      }
+
+      window.history.pushState(null, "", "#tariffs");
+    };
+
+    requestAnimationFrame(step);
+  };
 
   return (
     <Box
@@ -193,6 +231,7 @@ export function HeroSection() {
               <Link
                 component={NextLink}
                 href="#tariffs"
+                onClick={handleTariffsClick}
                 underline="hover"
                 sx={{
                   minHeight: 52,
