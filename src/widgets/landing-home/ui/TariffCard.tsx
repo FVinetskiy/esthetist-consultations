@@ -182,17 +182,20 @@ export function TariffCard({ tier }: TariffCardProps) {
                     width: "100%",
                     justifyContent: "space-between",
                     gap: 1,
-                    py: 0.5,
+                    p: "4px",
                     textAlign: "left",
-                    borderRadius: 1,
-                    color: "text.primary",
+                    borderRadius: "4px",
+                    bgcolor: "#F8F2EC",
+                    color: "#4A3A33",
                     "&:focus-visible": {
                       outline: `2px solid ${theme.palette.primary.main}`,
                       outlineOffset: 2,
                     },
                   }}
                 >
-                  <Typography variant="subtitle2">{t(`${p}.recTitle`)}</Typography>
+                  <Typography variant="subtitle2" sx={{ fontWeight: 700 }}>
+                    {t(`${p}.recTitle`)}
+                  </Typography>
                   <ExpandMoreIcon
                     fontSize="small"
                     sx={{
@@ -248,17 +251,20 @@ export function TariffCard({ tier }: TariffCardProps) {
                 width: "100%",
                 justifyContent: "space-between",
                 gap: 1,
-                py: 0.5,
+                p: "4px",
                 textAlign: "left",
-                borderRadius: 1,
-                color: "text.primary",
+                borderRadius: "4px",
+                bgcolor: "#F8F2EC",
+                color: "#4A3A33",
                 "&:focus-visible": {
                   outline: `2px solid ${theme.palette.primary.main}`,
                   outlineOffset: 2,
                 },
               }}
             >
-              <Typography variant="subtitle2">{t(`${p}.fitTitle`)}</Typography>
+              <Typography variant="subtitle2" sx={{ fontWeight: 700 }}>
+                {t(`${p}.fitTitle`)}
+              </Typography>
               <ExpandMoreIcon
                 fontSize="small"
                 sx={{

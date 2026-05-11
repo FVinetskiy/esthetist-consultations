@@ -332,10 +332,9 @@ export function InfoSections() {
                               theme.palette.mode === "light" ? 0.1 : 0.18,
                             ),
                           bgcolor: (theme) =>
-                            alpha(
-                              theme.palette.background.paper,
-                              theme.palette.mode === "light" ? 0.44 : 0.3,
-                            ),
+                            theme.palette.mode === "light"
+                              ? "#F8F2EC"
+                              : alpha(theme.palette.background.paper, 0.3),
                           p: 2,
                         }}
                       >
