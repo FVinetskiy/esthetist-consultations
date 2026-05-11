@@ -1,9 +1,12 @@
 "use client";
 
-import type { ReactNode } from "react";
+import { useState, type ReactNode } from "react";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import Box from "@mui/material/Box";
+import ButtonBase from "@mui/material/ButtonBase";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
+import Collapse from "@mui/material/Collapse";
 import Grid from "@mui/material/Grid";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
@@ -207,6 +210,7 @@ function InfoPanelCard({
 
 export function InfoSections() {
   const { t } = useTranslation();
+  const [isNotForOpen, setIsNotForOpen] = useState(false);
 
   const rawSteps = t("landing.workCard.steps", { returnObjects: true }) as Array<
     WorkStep | string
@@ -222,37 +226,42 @@ export function InfoSections() {
   );
 
   return (
-    <Section id="how-it-works">
-      <Grid
-        container
-        spacing={3}
-        columns={12}
-        alignItems={{ xs: "stretch", md: "flex-start" }}
-      >
-        <Grid size={{ xs: 12 }}>
-          <InfoPanelCard title={t("landing.workCard.title")} sx={{ bgcolor: "#F7EFE8" }}>
-            <Typography
-              variant="body2"
-              color="text.secondary"
-              sx={{ mb: 2.25, lineHeight: 1.65 }}
-            >
-              {t("landing.workCard.lead")}
-            </Typography>
-            <Stack spacing={0}>
-              {steps.map((step, index) => (
-                <Box key={`${index}-${step.title}`} sx={{ mt: index === 0 ? 0 : "30px" }}>
-                  <WorkStepItem index={index} step={step} />
-                  {index < steps.length - 1 ? <StepConnector /> : null}
-                </Box>
-              ))}
-            </Stack>
-          </InfoPanelCard>
+    <>
+      <Section id="how-it-works">
+        <Grid
+          container
+          spacing={3}
+          columns={12}
+          alignItems={{ xs: "stretch", md: "flex-start" }}
+        >
+          <Grid size={{ xs: 12 }}>
+            <InfoPanelCard title={t("landing.workCard.title")} sx={{ bgcolor: "#F7EFE8" }}>
+              <Typography
+                variant="body2"
+                color="text.secondary"
+                sx={{ mb: 2.25, lineHeight: 1.65 }}
+              >
+                {t("landing.workCard.lead")}
+              </Typography>
+              <Stack spacing={0}>
+                {steps.map((step, index) => (
+                  <Box key={`${index}-${step.title}`} sx={{ mt: index === 0 ? 0 : "30px" }}>
+                    <WorkStepItem index={index} step={step} />
+                    {index < steps.length - 1 ? <StepConnector /> : null}
+                  </Box>
+                ))}
+              </Stack>
+            </InfoPanelCard>
+          </Grid>
         </Grid>
+      </Section>
 
-        <Grid size={{ xs: 12 }}>
-          <InfoPanelCard title={t("landing.audienceCard.title")}>
-            <Grid container spacing={{ xs: 2.5, md: 3 }}>
-              <Grid size={{ xs: 12, md: 7 }}>
+      <Section sx={{ background: "#EEDDD5" }}>
+        <Grid container columns={12}>
+          <Grid size={{ xs: 12 }}>
+            <InfoPanelCard title={t("landing.audienceCard.title")}>
+            <Stack spacing={2.5}>
+              <Box>
                 <Typography
                   variant="subtitle2"
                   sx={{
@@ -268,11 +277,11 @@ export function InfoSections() {
                     <BulletItem key={item} text={item} />
                   ))}
                 </List>
-              </Grid>
-              <Grid size={{ xs: 12, md: 5 }}>
+              </Box>
+
+              <Box>
                 <Box
                   sx={{
-                    height: "100%",
                     borderRadius: 2,
                     border: "1px solid",
                     borderColor: (theme) =>
@@ -288,34 +297,67 @@ export function InfoSections() {
                     p: 2,
                   }}
                 >
-                  <Typography
-                    variant="subtitle2"
+                  <ButtonBase
+                    onClick={() => setIsNotForOpen((value) => !value)}
+                    aria-expanded={isNotForOpen}
                     sx={{
-                      color: (theme) => theme.palette.brand.heading,
-                      mb: 1,
-                      lineHeight: 1.45,
+                      width: "100%",
+                      justifyContent: "space-between",
+                      gap: 1,
+                      py: 0.5,
+                      textAlign: "left",
+                      borderRadius: 1,
+                      color: "text.primary",
+                      "&:focus-visible": {
+                        outline: "2px solid",
+                        outlineColor: "primary.main",
+                        outlineOffset: 2,
+                      },
                     }}
                   >
-                    {t("landing.audienceCard.notForTitle")}
-                  </Typography>
-                  <List disablePadding>
-                    {notForItems.map((item) => (
-                      <BulletItem key={item} text={item} />
-                    ))}
-                  </List>
-                  <Typography
-                    variant="body2"
-                    color="text.secondary"
-                    sx={{ mt: 1.5, lineHeight: 1.65, whiteSpace: "pre-line" }}
-                  >
-                    {t("landing.audienceCard.notForNote")}
-                  </Typography>
+                    <Typography
+                      variant="subtitle2"
+                      sx={{
+                        color: (theme) => theme.palette.brand.heading,
+                        lineHeight: 1.45,
+                      }}
+                    >
+                      {t("landing.audienceCard.notForTitle")}
+                    </Typography>
+                    <ExpandMoreIcon
+                      fontSize="small"
+                      sx={(theme) => ({
+                        color: "primary.main",
+                        transform: isNotForOpen ? "rotate(180deg)" : "rotate(0deg)",
+                        transition: theme.transitions.create("transform", {
+                          duration: theme.transitions.duration.shortest,
+                        }),
+                      })}
+                    />
+                  </ButtonBase>
+                  <Collapse in={isNotForOpen} timeout="auto" unmountOnExit>
+                    <Box sx={{ pt: 1 }}>
+                      <List disablePadding>
+                        {notForItems.map((item) => (
+                          <BulletItem key={item} text={item} />
+                        ))}
+                      </List>
+                      <Typography
+                        variant="body2"
+                        color="text.secondary"
+                        sx={{ mt: 1.5, lineHeight: 1.65, whiteSpace: "pre-line" }}
+                      >
+                        {t("landing.audienceCard.notForNote")}
+                      </Typography>
+                    </Box>
+                  </Collapse>
                 </Box>
-              </Grid>
-            </Grid>
-          </InfoPanelCard>
+              </Box>
+            </Stack>
+            </InfoPanelCard>
+          </Grid>
         </Grid>
-      </Grid>
-    </Section>
+      </Section>
+    </>
   );
 }

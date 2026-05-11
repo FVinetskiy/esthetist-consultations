@@ -99,7 +99,7 @@ export function TariffCard({ tier }: TariffCardProps) {
       sx={{
         width: "100%",
         height: "100%",
-        bgcolor: "background.paper",
+        bgcolor: "#FBF7F1",
         display: "flex",
         flexDirection: "column",
         "&:hover": {

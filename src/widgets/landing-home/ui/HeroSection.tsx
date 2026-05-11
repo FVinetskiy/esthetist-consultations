@@ -30,33 +30,6 @@ export function HeroSection() {
         },
         py: { xs: 4, md: 6 },
         bgcolor: (th) => th.palette.brand.bg,
-        backgroundImage: (th) => {
-          const b = th.palette.brand;
-          if (th.palette.mode === "light") {
-            return [
-              `linear-gradient(180deg, ${alpha("#ffffff", 0.72)} 0%, transparent 38%)`,
-              `linear-gradient(
-                152deg,
-                ${b.bg} 0%,
-                ${alpha(b.paper, 0.2)} 30%,
-                ${b.bgAlt} 55%,
-                ${alpha(b.accent, 0.08)} 88%,
-                ${alpha(b.bg, 0.98)} 100%
-              )`,
-            ].join(", ");
-          }
-
-          return [
-            `linear-gradient(180deg, ${alpha("#ffffff", 0.04)} 0%, transparent 36%)`,
-            `linear-gradient(
-              165deg,
-              ${b.bg} 0%,
-              ${alpha(b.paper, 0.45)} 40%,
-              ${alpha(b.bgAlt, 0.92)} 78%,
-              ${b.bg} 100%
-            )`,
-          ].join(", ");
-        },
         "@keyframes heroIn": {
           from: { opacity: 0, transform: "translateY(12px)" },
           to: { opacity: 1, transform: "translateY(0)" },

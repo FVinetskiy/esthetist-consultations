@@ -8,7 +8,7 @@ import { TariffCard } from "./TariffCard";
 
 export function TariffsSection() {
   return (
-    <Section id="tariffs">
+    <Section id="tariffs" sx={{ background: "#EEDDD5" }}>
       <Stack spacing={1.5} sx={{ mb: 4, maxWidth: 720, mx: "auto" }}>
         <Typography
           variant="h2"

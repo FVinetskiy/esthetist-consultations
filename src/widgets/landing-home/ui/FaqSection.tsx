@@ -75,7 +75,7 @@ export function FaqSection() {
   }, []);
 
   return (
-    <Section tinted id="faq">
+    <Section id="faq" sx={{ background: "#EEDDD5" }}>
       <Stack spacing={1.35} alignItems="center" sx={{ mb: { xs: 2.5, md: 3.5 } }}>
         <Box sx={{ display: "inline-flex", alignItems: "center", gap: 0.85 }}>
           <IconHelpSolid sx={{ fontSize: 22, color: "primary.main" }} aria-hidden />

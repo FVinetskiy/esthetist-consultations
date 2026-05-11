@@ -3,7 +3,7 @@
 import Box from "@mui/material/Box";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
-import { alpha, useTheme, type Theme } from "@mui/material/styles";
+import { alpha, useTheme } from "@mui/material/styles";
 import { useTranslation } from "react-i18next";
 import { showcaseMedia } from "@/shared/config/showcase-media";
 import { Section } from "../Section";
@@ -21,10 +21,6 @@ export function TailoredShowcaseSection() {
       id="tailored-showcase"
       sx={{
         py: { xs: 4, md: 6 },
-        bgcolor: (th: Theme) =>
-          th.palette.mode === "light"
-            ? alpha(th.palette.brand.paper, 0.4)
-            : th.palette.action.hover,
       }}
     >
       <Box

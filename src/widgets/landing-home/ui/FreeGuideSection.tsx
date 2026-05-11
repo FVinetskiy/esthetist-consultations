@@ -19,7 +19,7 @@ export function FreeGuideSection() {
   }) as string[];
 
   return (
-    <Section id="free-guide" tinted>
+    <Section id="free-guide">
       <Card
         elevation={0}
         sx={{
@@ -28,41 +28,14 @@ export function FreeGuideSection() {
           maxWidth: 960,
           mx: "auto",
           borderRadius: { xs: 5, md: 7 },
-          bgcolor: (th) =>
-            th.palette.mode === "light"
-              ? "#F2F2F3"
-              : alpha(th.palette.background.paper, 0.92),
-          backgroundImage: (th) =>
-            th.palette.mode === "light"
-              ? "linear-gradient(90deg, #efeff0 0%, #f6f6f7 50%, #eeeeef 100%)"
-              : "linear-gradient(90deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 100%)",
+          border: "1px solid",
+          borderColor: (theme) =>
+            alpha(theme.palette.brand.heading, theme.palette.mode === "light" ? 0.14 : 0.22),
+          bgcolor: "transparent",
+          backgroundImage: "none",
+          boxShadow: "none",
         }}
       >
-        <Box
-          aria-hidden
-          sx={{
-            position: "absolute",
-            left: { xs: -42, md: -36 },
-            bottom: { xs: -34, md: -30 },
-            width: { xs: 116, md: 148 },
-            height: { xs: 116, md: 148 },
-            borderRadius: "42% 58% 53% 47% / 42% 43% 57% 58%",
-            bgcolor: (th) => alpha(th.palette.primary.main, th.palette.mode === "light" ? 0.12 : 0.18),
-            filter: "blur(0.2px)",
-          }}
-        />
-        <Box
-          aria-hidden
-          sx={{
-            position: "absolute",
-            right: { xs: -56, md: -42 },
-            top: { xs: -48, md: -34 },
-            width: { xs: 132, md: 170 },
-            height: { xs: 132, md: 170 },
-            borderRadius: "55% 45% 48% 52% / 58% 40% 60% 42%",
-            bgcolor: (th) => alpha(th.palette.brand.accent, th.palette.mode === "light" ? 0.2 : 0.22),
-          }}
-        />
         <CardContent sx={{ px: { xs: 2.5, md: 5 }, py: { xs: 4, md: 5 }, position: "relative", zIndex: 1 }}>
           <Stack spacing={2.25} alignItems="center" textAlign="center">
             <Typography variant="h3" sx={{ color: (theme) => theme.palette.brand.heading, maxWidth: 660 }}>

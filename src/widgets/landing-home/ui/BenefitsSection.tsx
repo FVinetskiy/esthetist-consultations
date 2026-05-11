@@ -22,7 +22,7 @@ export function BenefitsSection() {
   const light = theme.palette.mode === "light";
 
   return (
-    <Section tinted>
+    <Section sx={{ background: "#EEDDD5" }}>
       <Box
         sx={{
           position: "relative",
@@ -30,7 +30,7 @@ export function BenefitsSection() {
           borderRadius: { xs: 3, md: 4 },
           px: { xs: 2, md: 4 },
           py: { xs: 4, md: 6 },
-          background: light ? "#F2F2F2" : alpha(theme.palette.background.paper, 0.8),
+          background: "transparent",
         }}
       >
         <Stack spacing={1.25} alignItems="center" sx={{ mb: { xs: 3.5, md: 5 } }}>
@@ -59,7 +59,7 @@ export function BenefitsSection() {
                 sx={{
                   p: { xs: 1.5, md: 1.75 },
                   borderRadius: 2.5,
-                  backgroundColor: alpha(theme.palette.background.paper, light ? 0.72 : 0.3),
+                  backgroundColor: "#FBF7F1",
                   border: `1px solid ${alpha(heading, light ? 0.12 : 0.25)}`,
                   animation: "benefitFadeIn 540ms ease both",
                   animationDelay: `${idx * 90}ms`,
@@ -130,7 +130,7 @@ export function BenefitsSection() {
                 sx={{
                   p: { xs: 1.5, md: 1.75 },
                   borderRadius: 2.5,
-                  backgroundColor: alpha(theme.palette.background.paper, light ? 0.72 : 0.3),
+                  backgroundColor: "#FBF7F1",
                   border: `1px solid ${alpha(heading, light ? 0.12 : 0.25)}`,
                   animation: "benefitFadeIn 540ms ease both",
                   animationDelay: `${(idx + 3) * 90}ms`,
