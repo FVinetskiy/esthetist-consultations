@@ -8,11 +8,8 @@ import Link from "@mui/material/Link";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 import { alpha, useTheme } from "@mui/material/styles";
-import Image from "next/image";
 import NextLink from "next/link";
 import { useTranslation } from "react-i18next";
-
-const HERO_PORTRAIT = "/hero-portrait.webp";
 
 export function HeroSection() {
   const { t } = useTranslation();
@@ -284,17 +281,6 @@ export function HeroSection() {
                     : "0 24px 70px rgba(0,0,0,0.36)",
               }}
             >
-              <Image
-                src={HERO_PORTRAIT}
-                alt={t("landing.hero.imageAlt")}
-                fill
-                priority
-                sizes="(max-width: 899px) min(100vw - 24px, 440px), 470px"
-                style={{
-                  objectFit: "cover",
-                  objectPosition: "center top",
-                }}
-              />
             </Box>
           </Box>
         </Box>

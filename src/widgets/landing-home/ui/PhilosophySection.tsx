@@ -84,12 +84,7 @@ export function PhilosophySection() {
   const rightCardBackground = (index: number) =>
     index === 0
       ? {
-          backgroundImage: `linear-gradient(90deg, ${alpha("#2B1711", 0.6)}, ${alpha(
-            "#2B1711",
-            0.22,
-          )}), url("/images/landing/inci-background.jpg")`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
+          bgcolor: alpha("#fff", 0.44),
         }
       : {
           bgcolor: alpha("#fff", 0.44),

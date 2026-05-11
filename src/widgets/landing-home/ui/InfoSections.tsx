@@ -56,10 +56,9 @@ function WorkStepItem({ index, step }: { index: number; step: WorkStep }) {
         alignItems: "flex-start",
         borderRadius: 2,
         border: `1px solid ${alpha(h, light ? 0.1 : 0.18)}`,
-        bgcolor: light
-          ? alpha(theme.palette.background.paper, 0.58)
-          : alpha(theme.palette.background.paper, 0.36),
-        p: 1.5,
+        bgcolor: "#FBF7F1",
+        py: "26px",
+        px: "12px",
       }}
     >
       <Box
@@ -122,6 +121,7 @@ type InfoPanelCardProps = {
   subtitle?: string;
   titleNoWrap?: boolean;
   children: ReactNode;
+  sx?: object;
 };
 
 function InfoPanelCard({
@@ -129,6 +129,7 @@ function InfoPanelCard({
   subtitle,
   titleNoWrap = false,
   children,
+  sx,
 }: InfoPanelCardProps) {
   const theme = useTheme();
   const h = theme.palette.brand.heading;
@@ -147,6 +148,7 @@ function InfoPanelCard({
     boxShadow: "none",
     overflow: "hidden",
     transition: "transform 0.28s ease, border-color 0.25s ease",
+    ...sx,
     "@media (hover: hover)": {
       "&:hover": {
         transform: "translateY(-3px)",
@@ -228,7 +230,7 @@ export function InfoSections() {
         alignItems={{ xs: "stretch", md: "flex-start" }}
       >
         <Grid size={{ xs: 12 }}>
-          <InfoPanelCard title={t("landing.workCard.title")}>
+          <InfoPanelCard title={t("landing.workCard.title")} sx={{ bgcolor: "#F7EFE8" }}>
             <Typography
               variant="body2"
               color="text.secondary"
@@ -236,9 +238,9 @@ export function InfoSections() {
             >
               {t("landing.workCard.lead")}
             </Typography>
-            <Stack spacing={1.5}>
+            <Stack spacing={0}>
               {steps.map((step, index) => (
-                <Box key={`${index}-${step.title}`}>
+                <Box key={`${index}-${step.title}`} sx={{ mt: index === 0 ? 0 : "30px" }}>
                   <WorkStepItem index={index} step={step} />
                   {index < steps.length - 1 ? <StepConnector /> : null}
                 </Box>

@@ -1,8 +1,12 @@
 "use client";
 
+import { useState } from "react";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import Box from "@mui/material/Box";
+import ButtonBase from "@mui/material/ButtonBase";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
+import Collapse from "@mui/material/Collapse";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemIcon from "@mui/material/ListItemIcon";
@@ -64,6 +68,8 @@ function TextBlocks({ items }: { items: string[] }) {
 export function TariffCard({ tier }: TariffCardProps) {
   const { t } = useTranslation();
   const theme = useTheme();
+  const [isGuideOpen, setIsGuideOpen] = useState(false);
+  const [isFitOpen, setIsFitOpen] = useState(false);
   const p = `landing.tariffs.${tier}`;
   const sep = alpha(
     theme.palette.brand.heading,
@@ -160,10 +166,51 @@ export function TariffCard({ tier }: TariffCardProps) {
             </Typography>
             <BulletList items={analyticsItems} />
 
-            <Typography variant="subtitle2" sx={{ mb: 0.75, mt: 1.5 }}>
-              {t(`${p}.recTitle`)}
-            </Typography>
-            {tier === "lite" ? <BulletList items={recItems} /> : <TextBlocks items={recItems} />}
+            {tier === "lite" ? (
+              <>
+                <Typography variant="subtitle2" sx={{ mb: 0.75, mt: 1.5 }}>
+                  {t(`${p}.recTitle`)}
+                </Typography>
+                <BulletList items={recItems} />
+              </>
+            ) : (
+              <Box sx={{ mt: 1.5 }}>
+                <ButtonBase
+                  onClick={() => setIsGuideOpen((value) => !value)}
+                  aria-expanded={isGuideOpen}
+                  sx={{
+                    width: "100%",
+                    justifyContent: "space-between",
+                    gap: 1,
+                    py: 0.5,
+                    textAlign: "left",
+                    borderRadius: 1,
+                    color: "text.primary",
+                    "&:focus-visible": {
+                      outline: `2px solid ${theme.palette.primary.main}`,
+                      outlineOffset: 2,
+                    },
+                  }}
+                >
+                  <Typography variant="subtitle2">{t(`${p}.recTitle`)}</Typography>
+                  <ExpandMoreIcon
+                    fontSize="small"
+                    sx={{
+                      color: "primary.main",
+                      transform: isGuideOpen ? "rotate(180deg)" : "rotate(0deg)",
+                      transition: theme.transitions.create("transform", {
+                        duration: theme.transitions.duration.shortest,
+                      }),
+                    }}
+                  />
+                </ButtonBase>
+                <Collapse in={isGuideOpen} timeout="auto" unmountOnExit>
+                  <Box sx={{ pt: 0.75 }}>
+                    <TextBlocks items={recItems} />
+                  </Box>
+                </Collapse>
+              </Box>
+            )}
 
             {tier !== "lite" ? (
               <Box>
@@ -194,19 +241,49 @@ export function TariffCard({ tier }: TariffCardProps) {
             </Typography>
           </Box>
           <Box sx={{ borderTop: `1px solid ${sep}`, mt: 1.75, pt: 1.5 }}>
-            <Typography variant="subtitle2" sx={{ mb: 1 }}>
-              {t(`${p}.fitTitle`)}
-            </Typography>
-            <BulletList items={fitItems} />
-            {hasFitNote ? (
-              <Typography
-                variant="body2"
-                color="text.secondary"
-                sx={{ mt: 1.5, lineHeight: 1.6 }}
-              >
-                {fitNote}
-              </Typography>
-            ) : null}
+            <ButtonBase
+              onClick={() => setIsFitOpen((value) => !value)}
+              aria-expanded={isFitOpen}
+              sx={{
+                width: "100%",
+                justifyContent: "space-between",
+                gap: 1,
+                py: 0.5,
+                textAlign: "left",
+                borderRadius: 1,
+                color: "text.primary",
+                "&:focus-visible": {
+                  outline: `2px solid ${theme.palette.primary.main}`,
+                  outlineOffset: 2,
+                },
+              }}
+            >
+              <Typography variant="subtitle2">{t(`${p}.fitTitle`)}</Typography>
+              <ExpandMoreIcon
+                fontSize="small"
+                sx={{
+                  color: "primary.main",
+                  transform: isFitOpen ? "rotate(180deg)" : "rotate(0deg)",
+                  transition: theme.transitions.create("transform", {
+                    duration: theme.transitions.duration.shortest,
+                  }),
+                }}
+              />
+            </ButtonBase>
+            <Collapse in={isFitOpen} timeout="auto" unmountOnExit>
+              <Box sx={{ pt: 0.75 }}>
+                <BulletList items={fitItems} />
+                {hasFitNote ? (
+                  <Typography
+                    variant="body2"
+                    color="text.secondary"
+                    sx={{ mt: 1.5, lineHeight: 1.6 }}
+                  >
+                    {fitNote}
+                  </Typography>
+                ) : null}
+              </Box>
+            </Collapse>
           </Box>
         </Box>
       </CardContent>
